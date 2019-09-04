@@ -13,7 +13,7 @@ class Solution14 {
                     i = -1;
                     j++;
                 }
-            }
+            } else break;
                 
         }
         
