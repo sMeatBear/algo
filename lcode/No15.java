@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -38,6 +39,7 @@ class Solution15 {
 
     }
 
+    /*
     public boolean isGroupExisted(List<List<Integer>> res, List<Integer> current) {
         for (int i = 0; i < res.size(); i++) {
             if (res.get(i).equals(current))
@@ -45,11 +47,12 @@ class Solution15 {
         }
         return false;   
     }
+    */
     
     
     public List<List<Integer>> threeSum(int[] nums) {
         // use hashmap to construct O(n^2) algo
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        HashSet<List<Integer>> res = new HashSet<List<Integer>>();
         Map<Integer, Integer> map  = new HashMap<Integer, Integer>();
         
         Arrays.sort(nums);
@@ -72,7 +75,8 @@ class Solution15 {
                         if (!isGroupExisted(res, temp)) res.add(temp);
                     }
                 }
-               */
+                */
+               
                 int exp = 0 - nums[i] - nums[j];
                 if (map.containsKey(exp)) {
                     int index = map.get(exp);
@@ -82,12 +86,12 @@ class Solution15 {
                         temp.add(nums[j]);
                         temp.add(exp);
                         Collections.sort(temp);
-                        if (!isGroupExisted(res, temp)) res.add(temp);
+                        res.add(temp);
                     }
                 }
             }
         }
-        return res;
+        return new ArrayList<List<Integer>>(res);
     }
 }
 public class No15 {
