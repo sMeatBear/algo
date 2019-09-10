@@ -19,7 +19,35 @@ class ListNode {
 
 
 class Solution23 {
-    
+    public ListNode createListNode(int[] a) {
+        // empty head
+        ListNode head = new ListNode(-1);
+        head.next = null;
+        ListNode current = head;
+
+        for (int i = 0; i < a.length; i++) {
+            ListNode node = new ListNode(a[i]);
+            current.next = node;
+            current = current.next;
+        }
+
+        return head.next;
+    }
+
+    public ListNode createListNode(List<Integer> a) {
+        ListNode head = new ListNode(-1);
+        head.next = null;
+        ListNode current = head;
+
+        for (int i = 0; i < a.size(); i++) {
+            ListNode node = new ListNode(a.get(i));
+            current.next = node;
+            current = current.next;
+        }
+
+        return head.next;
+    }
+
     public ListNode mergeKLists(ListNode[] lists) {
         // empty head node
         ListNode head = new ListNode(0);
@@ -75,31 +103,31 @@ class Solution23 {
         return head.next;
     }   
 
-    
+    public ListNode mergeKLists2(ListNode[] lists) {
+        List<Integer> l = new ArrayList<Integer>();
+
+        for (ListNode node: lists) {
+            while (node != null) {
+                l.add(node.val);
+                node = node.next;
+            }
+        }
+
+        Collections.sort(l);
+
+        return createListNode(l);
+    }
 }
 
 
 public class No23 {
-    public static ListNode createListNode(int[] a) {
-        // empty head
-        ListNode head = new ListNode(-1);
-        head.next = null;
-        ListNode current = head;
-
-        for (int i = 0; i < a.length; i++) {
-            ListNode node = new ListNode(a[i]);
-            current.next = node;
-            current = current.next;
-        }
-
-        return head.next;
-    }
+    
     public static void main(String[] args) {
         Solution23 s = new Solution23();
         int[] a = {1, 4, 5};
         int[] b = {1, 3, 4};
         int[] c = {};
-        ListNode[] lists = {createListNode(a), createListNode(b), createListNode(c)};
-        System.out.println(s.mergeKLists(lists));
+        ListNode[] lists = {s.createListNode(a), s.createListNode(b), s.createListNode(c)};
+        System.out.println(s.mergeKLists2(lists));
     }
 }
