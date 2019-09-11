@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReverseList",
+            "request": "launch",
+            "mainClass": "ReverseList"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - YanghuiTri",
             "request": "launch",
             "mainClass": "YanghuiTri"
