@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReverseChar",
+            "request": "launch",
+            "mainClass": "ReverseChar"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - No23",
             "request": "launch",
             "mainClass": "No23"
