@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ConstructBT",
+            "request": "launch",
+            "mainClass": "ConstructBT"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MemoFib",
             "request": "launch",
             "mainClass": "MemoFib"
