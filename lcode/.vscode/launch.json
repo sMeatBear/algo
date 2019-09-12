@@ -2,6 +2,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MemoFib",
+            "request": "launch",
+            "mainClass": "MemoFib"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Memoization",
+            "request": "launch",
+            "mainClass": "Memoization"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ReverseList",
             "request": "launch",
             "mainClass": "ReverseList"
