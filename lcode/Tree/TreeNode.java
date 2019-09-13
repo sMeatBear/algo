@@ -22,7 +22,7 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        String str = "";
+        String str = "inorder: ";
         str += traverse(this);
         return str;
     }

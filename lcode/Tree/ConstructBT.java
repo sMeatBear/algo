@@ -25,7 +25,6 @@ class SolutionConstruct {
             }
         }
 
-        
         for (int nextI = i - 1; nextI >= 0 && right.size() > 0; nextI--) {
             if (right.contains(root[nextI])) {
                 rootNode.right = build(right, root, nextI);
