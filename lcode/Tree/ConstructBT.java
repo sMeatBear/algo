@@ -1,47 +1,48 @@
 import java.util.*;
 
 class SolutionConstruct {
-    public TreeNode build (List<Integer> rest, int[] root, int i) {
-        
-        if (rest.size() == 0) return null;
+    // use hashmap accelerate searching
+    private Map<Integer, Integer> cacheRest;
+
+    public TreeNode build (int[] rest, int s, int e, int[] root, int i) {
+        // outer
+        if (s > e) return null;
         
         // current root
         TreeNode rootNode = new TreeNode(root[i]);
         
         // get index of root to divide left and right tree
-        int rootIndex = rest.indexOf(root[i]);
-        List<Integer> left = rest.subList(0, rootIndex);;
-        List<Integer> right;
-        if (rootIndex + 1 < rest.size())
-            right = rest.subList(rootIndex + 1, rest.size());
-        else 
-            right = new ArrayList<Integer>();
+        int rootIndex = cacheRest.get(root[i]);
+        int left = rootIndex - 1;
+        int right = rootIndex + 1;
         
         // find next root for each part
-        for (int nextI = i - 1; nextI >= 0 && left.size() > 0; nextI--) {
-            if (left.contains(root[nextI])) {
-                rootNode.left = build(left, root, nextI);
-                break;
-            }
-        }
-
-        for (int nextI = i - 1; nextI >= 0 && right.size() > 0; nextI--) {
-            if (right.contains(root[nextI])) {
-                rootNode.right = build(right, root, nextI);
+        for (int nextI = i - 1; nextI >= 0 && left - s >= 0; nextI--) {
+            int nextRootIndex = cacheRest.get(root[nextI]);
+            if (nextRootIndex <= left && nextRootIndex >= s) {
+                rootNode.left = build(rest, s, left, root, nextI);
                 break;
             }
         }
         
-     
+        
+        for (int nextI = i - 1; nextI >= 0 && e - right >= 0; nextI--) {
+            int nextRootIndex = cacheRest.get(root[nextI]);
+            if (nextRootIndex >= right && nextRootIndex <= e) {
+                rootNode.right = build(rest, right, e, root, nextI);
+                break;
+            }
+        }
+        
         return rootNode;
     }
     
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        List<Integer> rest = new ArrayList<Integer>();
-        for (int i : inorder) {
-            rest.add(i);
+        cacheRest = new HashMap<Integer, Integer>();
+        for (int i = 0; i < inorder.length; i++) {
+            cacheRest.put(inorder[i], i);
         }
-        return build(rest, postorder, postorder.length - 1);
+        return build(inorder, 0, postorder.length - 1, postorder, postorder.length - 1);
     }
 }
 
