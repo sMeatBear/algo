@@ -3,7 +3,7 @@ import java.util.*;
 class SolutionConstruct {
     // use hashmap accelerate searching
     private Map<Integer, Integer> cacheRest;
-
+    
     public TreeNode build (int[] rest, int s, int e, int[] root, int i) {
         // outer
         if (s > e) return null;

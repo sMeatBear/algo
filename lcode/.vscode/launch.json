@@ -2,6 +2,32 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - No",
+            "request": "launch",
+            "mainClass": "No",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Next",
+            "request": "launch",
+            "mainClass": "Next",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Serialize",
+            "request": "launch",
+            "mainClass": "Serialize"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - No117",
+            "request": "launch",
+            "mainClass": "No117"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ConstructBT",
             "request": "launch",
             "mainClass": "ConstructBT"
