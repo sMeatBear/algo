@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LambdaTest",
+            "request": "launch",
+            "mainClass": "LambdaTest",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Lambda",
+            "request": "launch",
+            "mainClass": "Lambda",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mode",
+            "request": "launch",
+            "mainClass": "Mode",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - No",
             "request": "launch",
             "mainClass": "No",
