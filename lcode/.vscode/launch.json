@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - KthLargestMain",
+            "request": "launch",
+            "mainClass": "KthLargestMain",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LambdaTest",
             "request": "launch",
             "mainClass": "LambdaTest",
