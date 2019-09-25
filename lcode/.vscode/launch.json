@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BinarySearch1",
+            "request": "launch",
+            "mainClass": "BinarySearch1",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mode",
+            "request": "launch",
+            "mainClass": "String.Mode",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BinarySearch1",
+            "request": "launch",
+            "mainClass": "String.BinarySearch1",
+            "projectName": "lcode_4ebe0366"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - KthLargestMain",
             "request": "launch",
             "mainClass": "KthLargestMain",

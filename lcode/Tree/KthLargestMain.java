@@ -15,7 +15,7 @@ class KthLargest {
         k = _k;
         if (nums.length != 0 ) {
             root = new TreeNode(nums[0]);
-            for (int i = 0; i < nums.length; i++) {
+            for (int i = 1; i < nums.length; i++) {
                 simpleAdd(nums[i]);
             }
         }
@@ -49,7 +49,6 @@ class KthLargest {
         
         TreeNode newNode = new TreeNode(_val);
         int kthNum = _val;
-        
         while (p != null) {
             if (_val < p.val) {
                 if (p.left == null) {p.left = newNode; p = null;}
@@ -83,9 +82,9 @@ class KthLargest {
 
 public class KthLargestMain {
     public static void main(String[] args) {
-        int[] nums = new int[] {4, 5, 8, 2};
-        KthLargest k = new KthLargest(3, nums);
-        System.out.println(k.add(3));
+        int[] nums = new int[] {0};
+        KthLargest k = new KthLargest(2, nums);
+        System.out.println(k.add(-1));
         System.out.println(k.add(6));
         System.out.println(k.add(10));
     }
