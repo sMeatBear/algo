@@ -2,6 +2,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestLinear",
+            "request": "launch",
+            "mainClass": "TestLinear",
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Permutation",
+            "request": "launch",
+            "mainClass": "Permutation",
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BinarySearch1",
             "request": "launch",
             "mainClass": "BinarySearch1",
