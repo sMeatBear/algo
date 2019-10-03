@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Combination",
+            "request": "launch",
+            "mainClass": "app.backtracking.Combination",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Soduku",
             "request": "launch",
             "mainClass": "app.backtracking.Soduku",
