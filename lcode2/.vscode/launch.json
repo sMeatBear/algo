@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - GenerateParentheses",
+            "request": "launch",
+            "mainClass": "app.backtracking.GenerateParentheses",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Combination",
             "request": "launch",
             "mainClass": "app.backtracking.Combination",
