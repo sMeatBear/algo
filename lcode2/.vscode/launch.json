@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Gain",
+            "request": "launch",
+            "mainClass": "app.tree.Gain",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SkyLine",
+            "request": "launch",
+            "mainClass": "app.linear.SkyLine",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - GenerateParentheses",
             "request": "launch",
             "mainClass": "app.backtracking.GenerateParentheses",
