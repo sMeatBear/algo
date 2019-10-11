@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Zigzag",
+            "request": "launch",
+            "mainClass": "app.linear.Zigzag",
+            "projectName": "Leetcode2"
+        }
+    ]
+}
