@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MyLinked",
+            "request": "launch",
+            "mainClass": "app.linear.MyLinked",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MyLinkedList",
+            "request": "launch",
+            "mainClass": "app.linear.MyLinkedList",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - app",
+            "request": "launch",
+            "mainClass": "app",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MyLinkedList",
+            "request": "launch",
+            "mainClass": "MyLinkedList",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FileCopyer",
             "request": "launch",
             "mainClass": "app.basic.FileCopyer",
