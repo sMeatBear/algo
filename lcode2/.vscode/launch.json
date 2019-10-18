@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ThreadImpl",
+            "request": "launch",
+            "mainClass": "app.thread.ThreadImpl",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Gain",
             "request": "launch",
             "mainClass": "app.tree.Gain",
