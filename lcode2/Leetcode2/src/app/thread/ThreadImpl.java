@@ -3,11 +3,15 @@ package app.thread;
 class MyRunnable implements Runnable {
     int i = 10;
 
+    public void substract() {
+        System.out.println(Thread.currentThread().getName() + ": " + --i);
+
+    }
+
     @Override
     public void run() {
         try {
-            synchronized(this) {
-
+            synchronized (this) {
                 while (i >= 0) {
                     i--;
                     System.out.println(Thread.currentThread().getName() + ": " + i);
@@ -24,7 +28,7 @@ class MyRunnable implements Runnable {
 public class ThreadImpl {
     public static void main(String[] args) {
         Runnable r = new MyRunnable();
-        
+
         Thread th1 = new Thread(r, "hello");
         Thread th2 = new Thread(r, "nihao");
         th1.start();
