@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - KeysRooms",
+            "request": "launch",
+            "mainClass": "app.search.KeysRooms",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BFS01Matrix",
             "request": "launch",
             "mainClass": "app.search.BFS01Matrix",
