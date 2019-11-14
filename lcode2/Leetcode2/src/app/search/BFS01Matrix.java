@@ -19,7 +19,7 @@ class Solution01Matrix {
         }
     }
     // bfs
-    public int[][] updateMatrix(int[][] matrix) {
+    public int[][] updateMatrixBFSFAILED(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) return matrix;
         
         boolean[][] computed = new boolean[matrix.length][matrix[0].length];
@@ -110,6 +110,50 @@ class Solution01Matrix {
         }
         
         return matrix;
+    }
+
+    // approache 2:
+    public int[][] updateMatrix(int[][] matrix) {
+        // bfs
+        // compose a distance matrix
+        int numR = matrix.length, numC = matrix[0].length;
+        int[][] dist = new int[numR][numC];
+        // use a queue to realize bfs
+        Deque<Integer[]> queue = new ArrayDeque<>();
+        
+        for (int i = 0; i < numR; i++) {
+            for (int j = 0; j < numC; j++) {
+                // when matrix value is 1 the dist set to INT_MAX
+                if (matrix[i][j] == 1)
+                    dist[i][j] = Integer.MAX_VALUE;
+                else
+                    // enqueue 0's coordiante
+                    queue.offer(new Integer[] {i, j});
+            }
+        }
+        
+        // four next layer's, up, right, down, left
+        Integer[][] nexts = new Integer[][] {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+        
+        // do the bfs
+        while (!queue.isEmpty()) {
+            Integer[] curr = queue.poll();
+            
+            // push next into queue if valid
+            for (Integer[] dir : nexts) {
+                int newR = curr[0] + dir[0], newC = curr[1] + dir[1];
+                if (newR >= 0 && newR < numR && newC >=0 && newC < numC) {
+                    // ignore those dist doesn't change point and update the INT_MAX ones
+                    if (dist[newR][newC] > dist[curr[0]][curr[1]] + 1) {
+                        dist[newR][newC] = dist[curr[0]][curr[1]] + 1;
+                        queue.offer(new Integer[] {newR, newC});
+                    }            
+                }
+            }
+            
+        } // end of bfs (while)
+        
+        return dist;
     }
 }
 
