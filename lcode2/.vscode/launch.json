@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BFS01Matrix",
+            "request": "launch",
+            "mainClass": "app.search.BFS01Matrix",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ThreadImpl",
             "request": "launch",
             "mainClass": "app.thread.ThreadImpl",
