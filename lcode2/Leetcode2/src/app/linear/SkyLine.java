@@ -41,7 +41,6 @@ class SkyLineSolution {
 	            // negative height means it's end of the building
 	            right.add(b[1]);
 	            right.add(-b[2]);
-	            
 	            heights.add(left);
 	            heights.add(right);
 	        }
