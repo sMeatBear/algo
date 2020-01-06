@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - No648_ReplaceWords",
+            "request": "launch",
+            "mainClass": "app.tree.No648_ReplaceWords",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - No677_MapSumPairs",
             "request": "launch",
             "mainClass": "app.tree.No677_MapSumPairs",
