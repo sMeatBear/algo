@@ -47,6 +47,7 @@ class MaximumXOR {
         
         This is a greedy part, since we're looking for the largest XOR, we start 
         from the very begining, aka, the 31st postition of bits. */
+        // e.g. [14, 11, 7, 2] = [1110, 1011, 0111, 0010]
         for (int i = 30; i >= 0; i--) {
             
             //The mask will grow like  100..000 , 110..000, 111..000,  then 1111...111
@@ -64,8 +65,8 @@ class MaximumXOR {
                 set.add(leftPartOfNum);
             }
             
-            // if i = 2 and before this iteration, the maxResult we have now is 1100, 
-            // my wish is the maxResult will grow to 1110, so I will try to find a candidate
+            // if i = 1 and before this iteration, the maxResult we have now is 1000, 
+            // my wish is the maxResult will grow to 1100, so I will try to find a candidate
             // which can give me the greedyTry;
             int greedyTry = maxResult | curMask;
             
@@ -73,7 +74,8 @@ class MaximumXOR {
                 //This is the most tricky part, coming from a fact that if a ^ b = c, then a ^ c = b;
                 // now we have the 'c', which is greedyTry, and we have the 'a', which is leftPartOfNum
                 // If we hope the formula a ^ b = c to be valid, then we need the b, 
-                // and to get b, we need a ^ c, if a ^ c exisited in our set, then we're good to go
+                // and to get b (only care about the MSB left part), 
+                // we need a ^ c, if a ^ c exisited in our set, then we're good to go
                 int anotherNum = leftPartOfNum ^ greedyTry;
                 if (set.contains(anotherNum)) {
                     maxResult= greedyTry;
