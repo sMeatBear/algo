@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - No421_MaximumXOR",
+            "request": "launch",
+            "mainClass": "app.tree.No421_MaximumXOR",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - No211_AddSearchWord",
             "request": "launch",
             "mainClass": "app.tree.No211_AddSearchWord",
