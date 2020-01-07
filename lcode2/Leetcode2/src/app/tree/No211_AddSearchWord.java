@@ -56,10 +56,6 @@ class WordDictionary {
     /** search a single char each time for the whole word by dfs */
     public boolean search(TNode node, char[] wordArr, int start) {
         TNode cur = node;
-        
-        // end condition
-        if (start >= wordArr.length)
-            return false;
 
         // check
         char ch = wordArr[start];
