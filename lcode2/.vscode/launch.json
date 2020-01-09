@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PalindromePairs",
+            "request": "launch",
+            "mainClass": "app.trie.no336_palindromepairs.PalindromePairs",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WordSearchII",
             "request": "launch",
             "mainClass": "app.trie.no212_wordsearchii.WordSearchII",
