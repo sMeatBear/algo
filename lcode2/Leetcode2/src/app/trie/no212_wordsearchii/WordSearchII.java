@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+/** take the char from board to find the corresponding char in the trie (only traverse the board once) */
 class Solution {
     public List<String> findWords(char[][] board, String[] words) {
         List<String> res = new ArrayList<>();
