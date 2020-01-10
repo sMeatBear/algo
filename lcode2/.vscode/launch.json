@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ToLowerCase",
+            "request": "launch",
+            "mainClass": "app.string.no709_tolowercase.ToLowerCase",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DefangingIP",
             "request": "launch",
             "mainClass": "app.string.no1108_defangingip.DefangingIP",
