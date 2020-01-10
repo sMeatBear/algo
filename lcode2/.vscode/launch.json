@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DivideTwoIntegers",
+            "request": "launch",
+            "mainClass": "app.basic.no29_dividetwointegers.DivideTwoIntegers",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PalindromePairs",
             "request": "launch",
             "mainClass": "app.trie.no336_palindromepairs.PalindromePairs",
