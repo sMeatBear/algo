@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DefangingIP",
+            "request": "launch",
+            "mainClass": "app.string.no1108_defangingip.DefangingIP",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DivideTwoIntegers",
             "request": "launch",
             "mainClass": "app.basic.no29_dividetwointegers.DivideTwoIntegers",
