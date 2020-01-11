@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ThreeSum",
+            "request": "launch",
+            "mainClass": "app.array.no15_3sum.ThreeSum",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ToLowerCase",
             "request": "launch",
             "mainClass": "app.string.no709_tolowercase.ToLowerCase",
