@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SetMatrixZeroes",
+            "request": "launch",
+            "mainClass": "app.array.no73_setmatrixzeros.SetMatrixZeroes",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ThreeSum",
             "request": "launch",
             "mainClass": "app.array.no15_3sum.ThreeSum",
