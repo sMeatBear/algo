@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CombinationSum",
+            "request": "launch",
+            "mainClass": "app.array.no39_combinationsum.CombinationSum",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SetMatrixZeroes",
             "request": "launch",
             "mainClass": "app.array.no73_setmatrixzeros.SetMatrixZeroes",
