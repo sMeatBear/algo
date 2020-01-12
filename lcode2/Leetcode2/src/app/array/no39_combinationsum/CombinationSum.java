@@ -38,18 +38,46 @@ import java.util.Set;
 
 */
 class Solution {
+    // approch 3: backtracking
+    private List<List<Integer>> res = new ArrayList<>();
+    
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        dfs(candidates, target, 0, 0, new ArrayList<>());
+        return res;
+    }
+    
+    private void dfs(int[] can, int target, int sum, int start, List<Integer> sol) {
+        if (sum == target) {
+            res.add(new ArrayList<>(sol));
+            return;
+        }
+        
+        for (int i = start; i < can.length; i++) {
+            //put the ending case here rather than the beginning of dfs to avoid redundant recursion
+            if (sum + can[i] > target) {
+                continue;
+            }
+            
+            sol.add(can[i]);
+            dfs(can, target, sum + can[i], i, sol);
+            sol.remove(sol.size() - 1);
+        }
+    }
+
     // approach 2 backtracking:
-    public List<List<Integer>> combinationSum(int[] nums, int target) {
+    public List<List<Integer>> combinationSum2(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
         backtrack(list, new ArrayList<>(), nums, target, 0);
         return list;
     }
     
+    /**
+     * @param templist 
+     */
     private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
-        if(remain < 0) return;
-        else if(remain == 0) list.add(new ArrayList<>(tempList));
-        else{ 
+        // !! end try (need to use a new list because we need to change tempList )
+        if (remain > 0) { 
             for(int i = start; i < nums.length; i++){
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
@@ -57,6 +85,8 @@ class Solution {
                 tempList.remove(tempList.size() - 1);
             }
         }
+
+        list.add(new ArrayList<>(tempList));
     }
 
     // approach 1 dp:
