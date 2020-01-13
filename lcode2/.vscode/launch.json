@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CombinationSumII",
+            "request": "launch",
+            "mainClass": "app.backtracking.no40_combinationsumii.CombinationSumII",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CombinationSum",
             "request": "launch",
             "mainClass": "app.array.no39_combinationsum.CombinationSum",
