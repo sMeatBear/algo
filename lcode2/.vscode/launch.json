@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MultiplyStrings",
+            "request": "launch",
+            "mainClass": "app.string.no43_multiplystrings.MultiplyStrings",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CombinationSumII",
             "request": "launch",
             "mainClass": "app.backtracking.no40_combinationsumii.CombinationSumII",
