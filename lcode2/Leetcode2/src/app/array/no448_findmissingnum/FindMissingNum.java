@@ -22,8 +22,32 @@ import java.util.Set;
  * Output: [5,6]
  */
 class Solution {
-    // approach 2 : hashset
+    // approach 3: little trick
     public List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> res = new ArrayList<>();
+
+        // flip all positive number to negative following the rule: nums[nums[i] - 1] = -~;
+        // since nums[i] is from [1, n], i is from [0, n - 1]
+        for (int i = 0; i < nums.length; i++) {
+            // !! nums[i] may be flipped
+            int j = Math.abs(nums[i]) - 1;
+            // only flip once for a unique number in the array
+            if (nums[j] > 0) {
+                nums[j] = -nums[j];
+            }
+        }
+
+        // traverse again
+        for (int i = 0; i < nums.length; i++) {
+            // if nums[i] is not flipped, then the i+1 is missing
+            if (nums[i] > 0) res.add(i + 1);
+        }
+
+        return res;
+    }
+
+    // approach 2 : hashset
+    public List<Integer> findDisappearedNumbers2(int[] nums) {
         List<Integer> res = new ArrayList<>();
         Set<Integer> all = new HashSet<>();
         // add all nums to hashset
