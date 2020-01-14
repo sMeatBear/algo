@@ -36,18 +36,18 @@ Google: 90% of our engineers use the software you wrote (Homebrew), but you canâ
 
 class Solution {
     public TreeNode invertTree(TreeNode root) {
-        inorder(root);
+        preorder(root);
         return root;
     }
 
-    public void inorder(TreeNode t) {
+    public void preorder(TreeNode t) {
         if (t != null) {
             // swap left and right
             TreeNode tmp = t.left;
             t.left = t.right;
             t.right = tmp;
-            inorder(t.left);
-            inorder(t.right);
+            preorder(t.left);
+            preorder(t.right);
         }
     }
 }
