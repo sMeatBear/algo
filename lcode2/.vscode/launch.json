@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FindMissingNum",
+            "request": "launch",
+            "mainClass": "app.array.no448_findmissingnum.FindMissingNum",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MultiplyStrings",
             "request": "launch",
             "mainClass": "app.string.no43_multiplystrings.MultiplyStrings",
