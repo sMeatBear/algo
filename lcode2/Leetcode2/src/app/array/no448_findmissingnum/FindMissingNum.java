@@ -2,7 +2,9 @@ package app.array.no448_findmissingnum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some
@@ -20,19 +22,35 @@ import java.util.List;
  * Output: [5,6]
  */
 class Solution {
+    // approach 2 : hashset
     public List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> res = new ArrayList<>();
+        Set<Integer> all = new HashSet<>();
+        // add all nums to hashset
+        for (int i = 0; i < nums.length; i++) {
+            all.add(nums[i]);
+        }
+
+        // check one by one
+        for (int i = 1; i <= nums.length; i++) {
+            if (!all.contains(i)) {
+                res.add(i);
+            }
+        }
+
+        return res;
+    }
+    // approach 1 : sorting
+    public List<Integer> findDisappearedNumbers1(int[] nums) {
         List<Integer> res = new ArrayList<>();
         // special case
         if (nums.length == 0) return res;
 
         Arrays.sort(nums);
         int num = 1;
-        // compare the first element (to reduce if statement in the loop)
-        if (num != nums[0]) res.add(num);
-        num++;
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             // skip duplicate numebr
-            if (nums[i] != nums[i - 1]) {
+            if (i == 0 || nums[i] != nums[i - 1]) {
                 // add all missing num in between
                 while (num < nums[i]) {
                     res.add(num);
@@ -47,10 +65,8 @@ class Solution {
         // [1,1,2,2]
         // [2, 2]
         // handle remaining number
-        if (num < nums.length || res.size() == 0) {
-            for (; num <= nums.length; num++) {
-                res.add(num);
-            }
+        for (; num <= nums.length; num++) {
+            res.add(num);
         }
 
         return res;
@@ -61,7 +77,7 @@ class Solution {
 public class FindMissingNum {
     public static void main(String[] args) {
         Solution s = new Solution();
-        int[] nums = new int[] {4,3,2,7,7,2,3,1};
+        int[] nums = new int[] {1,1};
         List<Integer> res = s.findDisappearedNumbers(nums);
         System.out.println(res);
     }
