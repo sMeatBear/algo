@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LongestValidParentheses",
+            "request": "launch",
+            "mainClass": "app.string.no32_longestvalidparentheses.LongestValidParentheses",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SubstringwithConcatenation",
             "request": "launch",
             "mainClass": "app.string.no30_substringwithconcatenation.SubstringwithConcatenation",
