@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SubstringwithConcatenation",
+            "request": "launch",
+            "mainClass": "app.string.no30_substringwithconcatenation.SubstringwithConcatenation",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FindMissingNum",
             "request": "launch",
             "mainClass": "app.array.no448_findmissingnum.FindMissingNum",
