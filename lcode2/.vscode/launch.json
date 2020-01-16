@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TrappingRain",
+            "request": "launch",
+            "mainClass": "app.array.no42_trappingrain.TrappingRain",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FirstMissingPositive",
             "request": "launch",
             "mainClass": "app.array.no41_firstmissingpositive.FirstMissingPositive",
