@@ -3,7 +3,9 @@ package app.tree.no230_kthsmallestinbst;
  * Definition for a binary tree node.
  */
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -45,8 +47,32 @@ class TreeNode {
 }
 
 class Solution {
+     // approach 3: use a stack
+     public int kthSmallest(TreeNode root, int k) {
+        if (root == null || k < 1) return Integer.MIN_VALUE;
+        Deque<TreeNode> s = new ArrayDeque<>();
+        int i = 0, res = Integer.MIN_VALUE;
+        TreeNode parent = root;
+
+        while (i < k) {
+            // inorder traverse
+            // !! keep adding the left child until the node has no left child
+            while (parent != null) {
+                s.push(parent);
+                parent = parent.left;
+            } 
+            // no left child
+            parent = s.pop();
+            i++; res = parent.val;
+            // search the right subtree's left children
+            parent = parent.right;
+        }
+
+        return res;
+    }
+
     // approach 2: use inorder : property left <= parent <= right
-    public int kthSmallest(TreeNode root, int k) {
+    public int kthSmallest2(TreeNode root, int k) {
         List<Integer> list = new ArrayList<>();
         inorder(root, list, k);
         return list.get(k - 1);
