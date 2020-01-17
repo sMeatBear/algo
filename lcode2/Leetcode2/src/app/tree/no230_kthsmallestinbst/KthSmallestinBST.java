@@ -48,16 +48,16 @@ class Solution {
     // approach 2: use inorder : property left <= parent <= right
     public int kthSmallest(TreeNode root, int k) {
         List<Integer> list = new ArrayList<>();
-        inorder(root, list);
+        inorder(root, list, k);
         return list.get(k - 1);
     }
 
     // top down
-    public void inorder(TreeNode t, List<Integer> list) {
-        if (t != null) {
-            inorder(t.left, list);
+    public void inorder(TreeNode t, List<Integer> list, int k) {
+        if (t != null && list.size() < k) {
+            inorder(t.left, list, k);
             list.add(t.val);
-            inorder(t.right, list);
+            inorder(t.right, list, k);
         }
     }
 
