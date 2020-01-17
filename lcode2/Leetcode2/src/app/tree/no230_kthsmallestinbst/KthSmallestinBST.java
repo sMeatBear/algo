@@ -3,6 +3,8 @@ package app.tree.no230_kthsmallestinbst;
  * Definition for a binary tree node.
  */
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -43,8 +45,24 @@ class TreeNode {
 }
 
 class Solution {
-    // approach 1: use a priorityqueue
+    // approach 2: use inorder : property left <= parent <= right
     public int kthSmallest(TreeNode root, int k) {
+        List<Integer> list = new ArrayList<>();
+        inorder(root, list);
+        return list.get(k - 1);
+    }
+
+    // top down
+    public void inorder(TreeNode t, List<Integer> list) {
+        if (t != null) {
+            inorder(t.left, list);
+            list.add(t.val);
+            inorder(t.right, list);
+        }
+    }
+
+    // approach 1: use a priorityqueue
+    public int kthSmallest1(TreeNode root, int k) {
         Queue<Integer> q = new PriorityQueue<>((a, b) -> (b - a));
         preorder(root, k, q);
         return q.poll();
