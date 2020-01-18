@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Subsets",
+            "request": "launch",
+            "mainClass": "app.backtracking.no78_subsets.Subsets",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LongestSubstr",
             "request": "launch",
             "mainClass": "app.string.no516_longestsubstring.LongestSubstr",
