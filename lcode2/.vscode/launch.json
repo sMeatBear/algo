@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SearchRotatedSortedArr",
+            "request": "launch",
+            "mainClass": "app.search.binary.no33_searchinrotatedsortedarray.SearchRotatedSortedArr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Sqrt",
             "request": "launch",
             "mainClass": "app.search.binary.no69_sqrt.Sqrt",
