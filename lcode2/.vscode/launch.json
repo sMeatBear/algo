@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Sqrt",
+            "request": "launch",
+            "mainClass": "app.search.binary.no69_sqrt.Sqrt",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FindMinInRotatedSortedArray",
+            "request": "launch",
+            "mainClass": "app.search.binary.no153_findmininsortedarraydesc.FindMinInRotatedSortedArray",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FindMinInSortedArray",
+            "request": "launch",
+            "mainClass": "app.search.binary.no153_findmininsortedarraydesc.FindMinInSortedArray",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SortColors",
+            "request": "launch",
+            "mainClass": "app.array.no75_sortcolors.SortColors",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Subsets",
             "request": "launch",
             "mainClass": "app.backtracking.no78_subsets.Subsets",
