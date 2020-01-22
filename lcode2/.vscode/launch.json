@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MergeIntervals",
+            "request": "launch",
+            "mainClass": "app.sorting.no56_mergeintervals.MergeIntervals",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CommonSort",
             "request": "launch",
             "mainClass": "app.sorting.basic.CommonSort",
