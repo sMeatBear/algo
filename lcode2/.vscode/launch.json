@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CommonSort",
+            "request": "launch",
+            "mainClass": "app.sorting.basic.CommonSort",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BubbleSort",
+            "request": "launch",
+            "mainClass": "app.sorting.basic.BubbleSort",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SearchRotatedSortedArr",
             "request": "launch",
             "mainClass": "app.search.binary.no33_searchinrotatedsortedarray.SearchRotatedSortedArr",
