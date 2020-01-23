@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - JumpGame",
+            "request": "launch",
+            "mainClass": "app.dp.no55_jumpgame.JumpGame",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MergeIntervals",
             "request": "launch",
             "mainClass": "app.sorting.no56_mergeintervals.MergeIntervals",
