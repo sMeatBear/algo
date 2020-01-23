@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UniquePaths",
+            "request": "launch",
+            "mainClass": "app.dp.no62_uniquepaths.UniquePaths",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - JumpGame",
             "request": "launch",
             "mainClass": "app.dp.no55_jumpgame.JumpGame",
