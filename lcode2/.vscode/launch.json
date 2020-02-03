@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CoinChanges",
+            "request": "launch",
+            "mainClass": "app.dp.no322_coinchange.CoinChanges",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UniquePaths",
             "request": "launch",
             "mainClass": "app.dp.no62_uniquepaths.UniquePaths",
