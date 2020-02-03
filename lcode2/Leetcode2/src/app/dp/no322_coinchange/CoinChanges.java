@@ -1,5 +1,7 @@
 package app.dp.no322_coinchange;
 
+import java.util.Arrays;
+
 /**
  ** Change-Making Problem**
 You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
@@ -17,14 +19,37 @@ Note:
 You may assume that you have an infinite number of each kind of coin.
  */
 class Solution {
+    // Approach 2: Dynamic Programming (bottom-up)
     public int coinChange(int[] coins, int amount) {
-        return 0;
+        // Sub optimization question
+        // dp[i] = min{dp[i - vj] + 1 | vj is from coins} 
+        int max = amount + 1;
+        int[] dp = new int[max];
+        // Use max val to represent the amount can't be changed (If use -1, you need to add more if statements) !!!
+        Arrays.fill(dp, max);
+        dp[0] = 0;
+
+        // O(coins * amount)
+        for (int i = 1; i <= amount; i++) {
+            // dp[i] = min{dp[i - vj] + 1 | vj is from coins} 
+            for (int val : coins) {
+                int preOpt = i - val;
+                // prevent overflow !!!
+                if (preOpt >= 0 && dp[preOpt] != max) {
+                    // Amount i can be changed
+                    dp[i] = Math.min(dp[i], dp[preOpt] + 1); // Have dp[i - vj] 
+                }
+            }
+        }
+
+        return dp[amount] > amount ? -1 : dp[amount];
     }
 
     /***** Time Limit Exceeded *****/
     int count = Integer.MAX_VALUE;
-    // approach 1: bf (backtracking) O(n^n)
+    // approach 1: bf (backtracking) O(amount^n)
     public int coinChange1(int[] coins, int amount) {
+        if (amount == 0) return 0;
         backtrack(coins, 0, 0, amount);
         return count == Integer.MAX_VALUE ? -1 : count;
     }
@@ -36,7 +61,8 @@ class Solution {
      */
     public void backtrack(int[] coins, int curCnt, int sum, int target) {
         int newSum;
-        for (int i = 0; i < coins.length && (newSum = sum + coins[i]) <= target; i++) {
+        // Prevent the overflow
+        for (int i = 0; i < coins.length && (newSum = sum + coins[i]) <= target && newSum > 0; i++) {
             if (newSum == target) count = Math.min(curCnt + 1, count);
             else {
                 backtrack(coins, curCnt + 1, newSum, target);
@@ -50,7 +76,7 @@ public class CoinChanges {
         Solution s = new Solution();
         int[] coins = new int[] {1, 5, 8, 10};
         int amount = 13;
-        int res = s.coinChange1(coins, amount);
+        int res = s.coinChange(coins, amount);
         System.out.println(res);
     }
 }
