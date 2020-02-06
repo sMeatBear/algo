@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LongestIncSubstr",
+            "request": "launch",
+            "mainClass": "app.dp.no300_longestincsubstr.LongestIncSubstr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CoinChanges",
             "request": "launch",
             "mainClass": "app.dp.no322_coinchange.CoinChanges",
