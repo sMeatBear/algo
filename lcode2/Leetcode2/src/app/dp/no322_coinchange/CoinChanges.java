@@ -19,8 +19,32 @@ Note:
 You may assume that you have an infinite number of each kind of coin.
  */
 class Solution {
-    // Approach 2: Dynamic Programming (bottom-up)
+    // Approach 3: DP (top-down)
     public int coinChange(int[] coins, int amount) {
+        if (amount <= 0) return 0;
+        int[] dp = new int[amount + 1];
+        return count(coins, amount, dp);
+    }
+    public int count(int[] coins, int curAmount, int[] dp) {
+        // End 
+        if (curAmount < 0) return -1;
+        if (curAmount == 0) return 0;
+        // Memorization
+        if (dp[curAmount] != 0) return dp[curAmount];
+        
+        int min = Integer.MAX_VALUE;
+        for (int val : coins) {
+            // from deep level
+            int pre = count(coins, curAmount - val, dp);
+            if (pre >= 0 && pre < min) min = pre;
+        }
+
+        // Return min coins requirement under current amount 
+        return (dp[curAmount] = (min == Integer.MAX_VALUE ? -1 : min + 1));
+    }
+
+    // Approach 2: Dynamic Programming (bottom-up)
+    public int coinChange2(int[] coins, int amount) {
         // Sub optimization question
         // dp[i] = min{dp[i - vj] + 1 | vj is from coins} 
         int max = amount + 1;
@@ -75,7 +99,7 @@ public class CoinChanges {
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] coins = new int[] {1, 5, 8, 10};
-        int amount = 13;
+        int amount = 14;
         int res = s.coinChange(coins, amount);
         System.out.println(res);
     }
