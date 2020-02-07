@@ -18,8 +18,41 @@ Follow up: Could you improve it to O(n log n) time complexity?
  */
 
 class Solution {
-    // Approach 1: DP O(n^2)
+    // **Approach 2: DP optimized O(nlogn)
     public int lengthOfLIS(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        // dp array: Only record different length subseq's last element
+        // 1. Use index to represent the length of subseq
+        // 2. The content is the last element of the subseq with specific length
+        int[] dp = new int[nums.length];
+        dp[0] = Integer.MAX_VALUE;
+        int len = 0;
+
+        for (int num : nums) {
+            // Find where to replace or append the smaller element to maximize the subseq's length
+            int i = binarySearch(dp, len, num);
+            dp[i] = num;
+            if (i > len) len = i;
+        }
+
+        return len + 1;
+    }
+
+    public int binarySearch(int[] dp, int end, int target) {
+        int l = 0, r = end;
+
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (dp[mid] < target) l = mid + 1;
+            else r = mid - 1;
+        }
+
+        // Same element insert into the same spot, not found element insert the higher position
+        return l;
+    }
+
+    // Approach 1: DP O(n^2)
+    public int lengthOfLIS1(int[] nums) {
         // Special case
         if (nums == null || nums.length == 0) return 0;
 
@@ -44,8 +77,9 @@ class Solution {
 
 public class LongestIncSubstr {
     public static void main(String[] args) {
-        int[] nums = new int[] {1,3,6,7,9,4,10,5,6};
+        int[] nums = new int[] {10,9,2,5,3,7,101,18};
         Solution s = new Solution();
         System.out.println(s.lengthOfLIS(nums));
+
     }
 }
