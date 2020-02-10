@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TrailingZeros",
+            "request": "launch",
+            "mainClass": "app.math.no172_factorialtrailingzeros.TrailingZeros",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DivideTwoInt",
             "request": "launch",
             "mainClass": "app.math.no29_dividetwoint.DivideTwoInt",
