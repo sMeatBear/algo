@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Fraction2Decimal",
+            "request": "launch",
+            "mainClass": "app.math.no166_fractiontorecurringdecimal.Fraction2Decimal",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TrailingZeros",
             "request": "launch",
             "mainClass": "app.math.no172_factorialtrailingzeros.TrailingZeros",
