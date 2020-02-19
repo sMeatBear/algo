@@ -1,6 +1,11 @@
 package app.math.bitoperation;
 
 class Solution {
+    // Complement
+    public void complement() {
+        System.out.println((byte)(1 << 7));
+    }
+
     // Times 2
     public void times2(int n) {
         for (int i = 1; i < n; i <<= 1) {
@@ -42,7 +47,15 @@ public class BitOperation {
         int countOneInInt1 = s.countOneInInt2(2147483647);
         System.out.println("countOneInInt1: " + countOneInInt1);
 
+        // Use bit operation to time 2
         System.out.println("times2: ");
         s.times2(20);
+
+        // -2147483648 (1 ... 0000) to (1 ... 1111)
+        s.complement();
+
+        // byte 255
+        byte b255 = (byte)255;
+        System.out.println(b255);
     }
 }
