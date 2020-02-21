@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - IsSubsequence",
+            "request": "launch",
+            "mainClass": "app.dp.no392_issubsequence.IsSubsequence",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TaskScheduler",
             "request": "launch",
             "mainClass": "app.math.no621_taskscheduler.TaskScheduler",
