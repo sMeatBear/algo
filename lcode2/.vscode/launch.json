@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SingleNumber",
+            "request": "launch",
+            "mainClass": "app.array.no136_singlenumber.SingleNumber",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DivisorGame",
             "request": "launch",
             "mainClass": "app.dp.no1025_divisorgame.DivisorGame",
