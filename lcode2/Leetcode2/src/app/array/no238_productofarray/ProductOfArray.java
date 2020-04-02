@@ -77,11 +77,11 @@ class Solution {
     
     // Approach 1: with division tc: O(n) sc: O(n)
     public int[] productExceptSelf1(int[] nums) {
-        // Compute the total production
+        // Compute the total product
         int prod = 1;
         /*
             Count zero !:
-            1. If there is no zero then divide production by each elem in the array
+            1. If there is no zero then divide product by each elem in the array
             2. If there is 1 zero then only compute the elem equal to 0 in the new array
             3. If there is more than 1 zero then return new array with all 0s
         */
@@ -96,7 +96,7 @@ class Solution {
             }
         }
         
-        // Divide total production by each number
+        // Divide total product by each number
         int[] res = new int[nums.length];
         
         // Condition 1:
