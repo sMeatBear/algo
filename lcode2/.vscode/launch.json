@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - HappyNumber",
+            "request": "launch",
+            "mainClass": "app.linear.no202_happynumber.HappyNumber",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SingleNumber",
             "request": "launch",
             "mainClass": "app.array.no136_singlenumber.SingleNumber",
