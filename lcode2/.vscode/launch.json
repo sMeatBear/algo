@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MaxSubarray",
+            "request": "launch",
+            "mainClass": "app.dp.no53_maxsubarray.MaxSubarray",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ProductOfArray",
             "request": "launch",
             "mainClass": "app.array.no238_productofarray.ProductOfArray",
