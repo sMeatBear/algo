@@ -12,12 +12,13 @@ class Array {
 
     public void addAll(int[] nums) {
         for (int num : nums) {
-            list.add(num);
+            // list.add(num); // Change this line to next line
+            add(num); // FIXME: ArrayCount addAll method will double the count !!!
         }
     }
 }
 
-public class ArrayCount extends Array{
+public class ArrayCount extends Array {
     int count;
 
     @Override
@@ -28,6 +29,7 @@ public class ArrayCount extends Array{
 
     @Override
     public void addAll(int[] nums) {
+        // The add method has been overrided. So when invoke the parent method addAll, it will invoke the overrided add method
         super.addAll(nums);
         count += nums.length;
     }
