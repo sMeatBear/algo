@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ArrayCount",
+            "request": "launch",
+            "mainClass": "app.basic.Inheritance.ArrayCount",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MaxSubarray",
             "request": "launch",
             "mainClass": "app.dp.no53_maxsubarray.MaxSubarray",

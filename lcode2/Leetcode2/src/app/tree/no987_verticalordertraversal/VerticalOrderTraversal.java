@@ -51,10 +51,13 @@ The tree will have between 1 and 1000 nodes.
 Each node's value will be between 0 and 1000.
 */
 
-/**
- * Definition for a binary tree node. public class TreeNode { int val; TreeNode
- * left; TreeNode right; TreeNode(int x) { val = x; } }
- */
+class TreeNode { 
+    int val; 
+    TreeNode left; 
+    TreeNode right; 
+    TreeNode(int x) { val = x; } 
+}
+
 class Solution {
     // Aporoach 2: levelorder traverse with treemap and without recursion
     public List<List<Integer>> verticalTraversal(TreeNode root) {
