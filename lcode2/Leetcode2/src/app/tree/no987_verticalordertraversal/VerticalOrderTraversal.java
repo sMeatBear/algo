@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import javax.swing.tree.TreeNode;
-
 /**
 Given a binary tree, return the vertical order traversal of its nodes values.
 
