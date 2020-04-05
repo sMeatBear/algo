@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MoveZeroes",
+            "request": "launch",
+            "mainClass": "app.array.no283_movezeros.MoveZeroes",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArrayCount",
             "request": "launch",
             "mainClass": "app.basic.Inheritance.ArrayCount",
