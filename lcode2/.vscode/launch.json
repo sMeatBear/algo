@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - GroupAnagrams",
+            "request": "launch",
+            "mainClass": "app.string.no49_groupanagrams.GroupAnagrams",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Permutation",
             "request": "launch",
             "mainClass": "app.math.permutation.Permutation",
