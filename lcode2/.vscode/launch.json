@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BubbleSort",
+            "request": "launch",
+            "mainClass": "app.basic.array.BubbleSort",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SelectionSort",
+            "request": "launch",
+            "mainClass": "app.basic.array.SelectionSort",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ObjArr",
+            "request": "launch",
+            "mainClass": "app.basic.array.ObjArr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - GroupAnagrams",
             "request": "launch",
             "mainClass": "app.string.no49_groupanagrams.GroupAnagrams",
