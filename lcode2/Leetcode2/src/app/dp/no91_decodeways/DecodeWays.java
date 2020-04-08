@@ -26,7 +26,7 @@ class Solution {
         /*
         Thoughts:
             1. Use dp to record the possible decoding ways at each stage
-            2. The current state is only relative with previous one dp[i] ~ dp[i-1]
+            2. The current state is only relative with previous one dp[i] ~ dp[i-1] and dp[i-2]
         Conditions:
             1. If current digit can combine with the previous one (10 <= prev * 10 + curr <= 26):
                 dp[i] += dp[i - 2]
