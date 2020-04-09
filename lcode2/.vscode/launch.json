@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FindKClosest",
+            "request": "launch",
+            "mainClass": "app.search.binary.no658_findkclosest.FindKClosest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BubbleSort",
             "request": "launch",
             "mainClass": "app.basic.array.BubbleSort",
