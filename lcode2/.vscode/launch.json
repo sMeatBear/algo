@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RemoveAllAjacentDupInStr",
+            "request": "launch",
+            "mainClass": "app.array.no1047_removealldupinstr.RemoveAllAjacentDupInStr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BackspaceStrComp",
             "request": "launch",
             "mainClass": "app.linear.no844_backspacestrcomp.BackspaceStrComp",
