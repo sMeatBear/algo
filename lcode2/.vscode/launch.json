@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ThrowException",
+            "request": "launch",
+            "mainClass": "app.basic.ThrowException",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RemoveAllAjacentDupInStr",
             "request": "launch",
             "mainClass": "app.array.no1047_removealldupinstr.RemoveAllAjacentDupInStr",
