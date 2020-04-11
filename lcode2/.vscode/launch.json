@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BestTimeBuySellCoolDown",
+            "request": "launch",
+            "mainClass": "app.array.no309_besttimetobuysellcooldown.BestTimeBuySellCoolDown",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ThrowException",
             "request": "launch",
             "mainClass": "app.basic.ThrowException",
