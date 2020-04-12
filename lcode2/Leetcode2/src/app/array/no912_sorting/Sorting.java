@@ -84,11 +84,9 @@ class Solution {
         // O(n) merge
         while (i <= m && j <= r) {
             if (nums[i] < nums[j]) {
-                tmp[k++] = nums[i];
-                i++;
+                tmp[k++] = nums[i++];
             } else {
-                tmp[k++] = nums[j];
-                j++;
+                tmp[k++] = nums[j++];
             }
         }
         
