@@ -85,6 +85,26 @@ class MyPriorityQueue {
     }
 
     /**
+     * return the head of the heap
+     * @return arr[0]
+     */
+    public Integer peek() {
+        if (size == 0) {
+            return null;
+        }
+
+        return arr[0];
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    /**
      * build the heap by given int array
      */
     private void heapify() {
@@ -134,26 +154,6 @@ class MyPriorityQueue {
             left = i * 2 + 1;
             right = left + 1;
         }
-    }
-
-    /**
-     * return the head of the heap
-     * @return arr[0]
-     */
-    public Integer peek() {
-        if (size == 0) {
-            return null;
-        }
-
-        return arr[0];
-    }
-
-    public int size() {
-        return size;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
     }
 }
 
