@@ -164,12 +164,16 @@ public class MyPriorityQueueImpl {
         int test = mpq.peek();
         System.out.println(test);
 
+        System.out.println("=============offer() and poll()=============");
         for (int e : initial) {
             mpqNull.offer(e);
         }
-        System.out.println("=============offer() and poll()=============");
-        while (!mpq.isEmpty()) {
-            System.out.println(mpq.poll());
+
+        for (int i = 0; i < 30; i++) {
+            mpqNull.offer(i);
+        }
+        while (!mpqNull.isEmpty()) {
+            System.out.println(mpqNull.poll());
         }
     }
 }
