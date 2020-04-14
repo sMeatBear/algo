@@ -111,7 +111,7 @@ class MyPriorityQueue {
         // build the heap
         // 1. find the first non-leaf node from behind
         // 2. do the percolateDown from bottom to up, from right to left
-        // first non-left node index
+        // first non-leaf node index
         int i = (size - 2) / 2;
 
         for (; i >= 0; i--) {
