@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PostOrder",
+            "request": "launch",
+            "mainClass": "app.tree.no145_postorder.PostOrder",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MyPriorityQueueImpl",
             "request": "launch",
             "mainClass": "app.basic.MyPriorityQueueImpl",
