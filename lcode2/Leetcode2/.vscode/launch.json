@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ValidParenthesisStr",
+            "request": "launch",
+            "mainClass": "app.string.no678_validparenthesisstr.ValidParenthesisStr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - No648_ReplaceWords",
             "request": "launch",
             "mainClass": "app.tree.No648_ReplaceWords",
