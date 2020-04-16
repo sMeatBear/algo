@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 class Solution {
+    // approach 1: failed
     public boolean checkValidString(String s) {
         if (s == null || s.length() == 0) {
             return true;
@@ -37,22 +38,22 @@ class Solution {
                 }
                 i++;
             }
-            
+            // post process
+            // ** record unused stars
+            while (!stack.isEmpty() && stack.peek() == '*') {
+                countStar++;
+                stack.pollFirst();
+            }
+
             // ** clean left parenthesis, let left parenthesis replace used stars
-            int j = 0; 
-            do {
-                Character top = stack.pollFirst();
-                if (top == null) {
-                    return true;
-                } else if (top == ')') {
+            for (int j = 0; j < countStar * 2 && !stack.isEmpty(); j++) {
+                char top = stack.pollFirst();
+                if (top == ')') {
                     return false;
                 } else if (top == '*') {
-                    // unused starts at the top of the stack **
                     countStar++;
-                } else {
-                    j++;
                 }
-            } while (j < countStar);
+            }
             
             // ** clean stars
             while (!stack.isEmpty()) {
@@ -71,7 +72,7 @@ class Solution {
 public class ValidParenthesisStr {
     public static void main(String[] args) {
         Solution sol = new Solution();
-        String s = "*)(";
+        String s = "((*)";
         boolean res = sol.checkValidString(s);
         System.out.println(res);
     }
