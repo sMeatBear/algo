@@ -31,7 +31,7 @@ class Solution {
     int paths = 0;
     // Combination formular
     public int uniquePaths(int m, int n) {
-        int N = n + m - 2;// how much steps we need to do
+        // int N = n + m - 2;// how much steps we need to do
         int k = m - 1; // number of steps that need to go down
         double res = 1;
         // here we calculate the total possible path number 
