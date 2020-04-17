@@ -15,7 +15,6 @@ class Solution {
 
     // Count one in int 2
     public int countOneInInt2(int n) {
-        // mask: 1000 0000 0000 0000, then right move
         int count = 0;
 
         while (n != 0) {
