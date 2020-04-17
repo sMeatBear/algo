@@ -1,7 +1,5 @@
 package app.basic.interfaceimpl;
 
-import java.util.List;
-
 /**
  * test two interface with same method but with different implementation
  * 
@@ -14,9 +12,9 @@ interface CanBark {
 
 interface CanMakeNoise {
     public void makeNoise();
-    default void bark() {
-        System.out.println("wang");
-    }
+    // default void bark() {
+    //     System.out.println("wang");
+    // }
 }
 
 public class InterfaceDefault implements CanBark, CanMakeNoise {
