@@ -11,6 +11,7 @@ class Solution {
         for (int i = 1; i < n; i <<= 1) {
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 
     // Count one in int 2
@@ -56,5 +57,8 @@ public class BitOperation {
         // byte 255
         byte b255 = (byte)255;
         System.out.println(b255);
+
+        // left shift 32 bits
+        System.out.println("left shift 32 bits: " + (1 << 32));
     }
 }
