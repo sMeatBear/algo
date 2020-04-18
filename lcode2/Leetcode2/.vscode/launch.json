@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Generics",
+            "request": "launch",
+            "mainClass": "app.basic.generics.Generics",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BitOperation",
             "request": "launch",
             "mainClass": "app.math.bitoperation.BitOperation",
