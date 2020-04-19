@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RawType",
+            "request": "launch",
+            "mainClass": "app.basic.generics.RawType",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WordBreak",
             "request": "launch",
             "mainClass": "app.dp.no139_wordbreak.WordBreak",
