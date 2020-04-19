@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UpperWildcards",
+            "request": "launch",
+            "mainClass": "app.basic.generics.UpperWildcards",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RawType",
             "request": "launch",
             "mainClass": "app.basic.generics.RawType",
