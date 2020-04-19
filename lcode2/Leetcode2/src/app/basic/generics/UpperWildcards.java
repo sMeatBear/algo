@@ -10,7 +10,7 @@ public class UpperWildcards {
         intList.add(1);
         intList.add(20);
         intList.add(30);
-        // checked exception
+        // compile time error
         // printList(intList); 
         printListWild(intList);
     }
