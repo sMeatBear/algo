@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RotatedBinarySearch",
+            "request": "launch",
+            "mainClass": "app.search.no33_rotatedbinarysearch.RotatedBinarySearch",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UpperWildcards",
             "request": "launch",
             "mainClass": "app.basic.generics.UpperWildcards",
