@@ -19,6 +19,9 @@ Note:
 The values of preorder are distinct.
  */
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 import app.tree.TreeNode;
 
 /**
@@ -26,9 +29,38 @@ import app.tree.TreeNode;
  * left; TreeNode right; TreeNode(int x) { val = x; } }
  */
 class Solution {
+    // approach 3: iterative
+    public TreeNode bstFromPreorder(int[] preorder) {
+        if (preorder == null || preorder.length == 0) {
+            return null;
+        }
+        
+        TreeNode head = new TreeNode(preorder[0]);
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        stack.push(head);
+        
+        for (int i = 1; i < preorder.length; i++) {
+            TreeNode parent = stack.peek(), last = null;
+            // if preorder[i].val < parent; add it to the left
+            if (preorder[i] < parent.val) {
+                parent.left = new TreeNode(preorder[i]);
+                stack.push(parent.left);
+            } else {
+                // pop until reach the last node which is smaller than preorder[i]
+                while (!stack.isEmpty() && stack.peek().val < preorder[i]) {
+                    last = stack.pop();
+                }
+                last.right = new TreeNode(preorder[i]);
+                stack.push(last.right);
+            }
+        }
+        
+        return head;
+    }
+
     private int i = 0;
     // approach 2: improved recursive
-    public TreeNode bstFromPreorder(int[] preorder) {
+    public TreeNode bstFromPreorder2(int[] preorder) {
         return build(preorder, Integer.MAX_VALUE);
     }
 
