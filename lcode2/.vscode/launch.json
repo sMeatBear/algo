@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ConstructBstInPreorder",
+            "request": "launch",
+            "mainClass": "app.tree.no1008_constructbstinpreorder.ConstructBstInPreorder",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FileSeparator",
             "request": "launch",
             "mainClass": "app.basic.FileSeparator",
