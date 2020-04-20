@@ -26,8 +26,31 @@ import app.tree.TreeNode;
  * left; TreeNode right; TreeNode(int x) { val = x; } }
  */
 class Solution {
-    // recursive
+    private int i = 0;
+    // approach 2: improved recursive
     public TreeNode bstFromPreorder(int[] preorder) {
+        return build(preorder, Integer.MAX_VALUE);
+    }
+
+    private TreeNode build(int[] preorder, int upperBound) {
+        // if index reaches the end or current node cannot be a child node return
+        if (i >= preorder.length || preorder[i] > upperBound) {
+            return null;
+        }
+
+        // current node can be a child node as whatever a left or right child
+        TreeNode root = new TreeNode(preorder[i++]);
+        // left child must smaller than current node value 
+        // * (no lowerbound is because we assume the array is valid)
+        root.left = build(preorder, root.val);
+        // extends the upperbound to restrict the value
+        root.right = build(preorder, upperBound);
+
+        return root;
+    }
+
+    // approach 1: recursive
+    public TreeNode bstFromPreorder1(int[] preorder) {
         if (preorder == null || preorder.length == 0) {
             return null;
         }
@@ -42,7 +65,7 @@ class Solution {
      * @param upperBound for right node
      * @return next node position in the array
      */
-    public int build(int[] preorder, int i, TreeNode parent, int upperBound) {
+    private int build(int[] preorder, int i, TreeNode parent, int upperBound) {
         if (parent != null && i < preorder.length) {
             if (preorder[i] < parent.val) {
                 parent.left = new TreeNode(preorder[i]);
