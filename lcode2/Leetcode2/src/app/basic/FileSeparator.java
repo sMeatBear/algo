@@ -8,7 +8,7 @@ public class FileSeparator {
         System.out.println(File.separator);
         System.out.println(File.pathSeparator);
         System.out.println(File.separatorChar);
-        long time = 1587357987 * 1000;
+        long time = 1587357987000L;
         System.out.println("time: " + time);
         Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(time);
