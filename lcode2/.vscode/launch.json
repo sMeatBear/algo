@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ThreadCreationTest",
+            "request": "launch",
+            "mainClass": "app.basic.concurrency.ThreadCreationTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FirstRelativePrime",
             "request": "launch",
             "mainClass": "app.basic.generics.genericspractice.FirstRelativePrime",
