@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - InnerClassTest",
+            "request": "launch",
+            "mainClass": "app.basic.nestedclass.InnerClassTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DateTest",
             "request": "launch",
             "mainClass": "app.basic.Date.DateTest",
