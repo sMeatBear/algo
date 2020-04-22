@@ -32,19 +32,44 @@ import java.util.Set;
  */
 
 class Solution {
+    // approach 2: backtrack (Time Limit Exceeded)
+    public List<String> wordBreak2(String s, List<String> wordDict) {
+        List<String> result = new ArrayList<String>();
+        wordBreakUtil(s, wordDict, result, new StringBuilder());
+        return result;
+    }
+
+    public void wordBreakUtil(String s, List<String> wordDict, List<String> result, StringBuilder sb) {
+        if (s.equals("")) {
+            result.add(sb.toString().trim());
+            return;
+        }
+
+        for (String word : wordDict) {
+            if (s.startsWith(word)) {
+                // once find the match, 
+                // copy current sequence as a possible comb and pass it to next
+                StringBuilder res = new StringBuilder(sb);
+                res.append(" ").append(word);
+                wordBreakUtil(s.substring(word.length()), wordDict, result, res);
+            }
+        }
+    }
+
+    // approach 1: dp + backtrack
     public List<String> wordBreak(String s, List<String> wordDict) {
         Set<String> dictSet = new HashSet<>();
         List<String> res = new ArrayList<>();
-        
+
         // use a hashset to store words
         for (String word : wordDict) {
             dictSet.add(word);
         }
-        
+
         // record each stages previous separation index
         List<List<Integer>> dp = new ArrayList<>();
         dp.add(null);
-        
+
         for (int i = 1; i <= s.length(); i++) {
             List<Integer> curr = null;
             // handle j = 0
@@ -56,15 +81,15 @@ class Solution {
                 // if there is a combination from [0, j) and [j, i) is a word in the dict
                 if (dp.get(j) != null && dictSet.contains(s.substring(j, i))) {
                     curr = curr == null ? new ArrayList<>() : curr;
-                    // add this j to curr list 
+                    // add this j to curr list
                     // which means we can find a possible combination seperate by j
                     curr.add(j);
                 }
             }
-            
+
             dp.add(curr);
         }
-        
+
         // dfs traverse the previous index from behind
         int len = s.length();
         String[][] cache = new String[len][len + 1];
@@ -73,16 +98,17 @@ class Solution {
         if (prevIdx != null) {
             dfs(res, cache, strStack, prevIdx, len, s, dp);
         }
-        
+
         return res;
     }
-    
-    private void dfs(List<String> res, String[][] cache, Deque<String> strStack, List<Integer> prevIdx, int lastIdx, String s, List<List<Integer>> dp) {
+
+    private void dfs(List<String> res, String[][] cache, Deque<String> strStack, List<Integer> prevIdx, int lastIdx,
+            String s, List<List<Integer>> dp) {
         for (int prev : prevIdx) {
             if (cache[prev][lastIdx] == null) {
                 cache[prev][lastIdx] = s.substring(prev, lastIdx);
-            } 
-            
+            }
+
             String subStr = cache[prev][lastIdx];
             if (prev == 0) {
                 StringBuilder sb = new StringBuilder(subStr);
@@ -106,8 +132,8 @@ public class WordBreakII {
     public static void main(String[] args) {
         Solution sol = new Solution();
         String s = "catsanddog";
-        List<String> wordDict = Arrays.asList("cat","cats","and","sand","dog");
-        List<String> res = sol.wordBreak(s, wordDict);
+        List<String> wordDict = Arrays.asList("cat", "cats", "and", "sand", "dog");
+        List<String> res = sol.wordBreak2(s, wordDict);
         System.out.println(res);
     }
 }
