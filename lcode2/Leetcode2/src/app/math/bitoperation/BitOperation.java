@@ -19,6 +19,7 @@ class Solution {
         int count = 0;
 
         while (n != 0) {
+            // always remove the 1 at the rightmost bit
             n &= n - 1;
             count++;
         }
