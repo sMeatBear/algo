@@ -148,7 +148,7 @@ public class SortPractice {
         }
     }
 
-    public static void sortingTester(Class<?> sortingClass, String sortingName, int[] original, int[] correct)
+    public static void testSorting(Class<?> sortingClass, String sortingName, int[] original, int[] correct)
             throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException,
             SecurityException {
         // copy a new array to keep the original unsorted one untact
@@ -167,15 +167,15 @@ public class SortPractice {
                 + (endTime - startTime) + " ms\n");
     }
 
-    public static void sortingTester(Object obj, String sortingName, int[] original, int[] correct) throws IllegalAccessException,
+    public static void testSorting(Object obj, String sortingName, int[] original, int[] correct) throws IllegalAccessException,
             IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         Class<?> sortingClass = obj.getClass();
-        sortingTester(sortingClass, sortingName, original, correct);
+        testSorting(sortingClass, sortingName, original, correct);
     }
 
-    public static void sortingTester(String sortingName, int[] original, int[] correct) throws IllegalAccessException,
+    public static void testSorting(String sortingName, int[] original, int[] correct) throws IllegalAccessException,
             IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-        sortingTester(SortPractice.class, sortingName, original, correct);
+        testSorting(SortPractice.class, sortingName, original, correct);
     }
 
     public static void main(String[] args) throws Exception {
@@ -185,17 +185,17 @@ public class SortPractice {
         Arrays.sort(correct);
 
         /*********** selection ***************/
-        // sortingTester("selectionSort", original, correct);
+        // testSorting("selectionSort", original, correct);
         /*********** bubbleSort ***************/
-        // sortingTester("bubbleSort", original, correct);
+        // testSorting("bubbleSort", original, correct);
         /*********** mergeSort ***************/
-        sortingTester("mergeSort", original, correct);
+        testSorting("mergeSort", original, correct);
         /*********** old mergeSort ***************/
-        // sortingTester(app.sorting.basic.CommonSort.class, "mergeSort", original,
+        // testSorting(app.sorting.basic.CommonSort.class, "mergeSort", original,
         // correct);
         /*********** quickSort ***************/
-        sortingTester("quickSort", original, correct);
+        testSorting("quickSort", original, correct);
         /*********** original quickSort ***************/
-        sortingTester(Arrays.class, "sort", original, correct);
+        testSorting(Arrays.class, "sort", original, correct);
     }
 }
