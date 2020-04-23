@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SortingTestCaseGenerator",
+            "request": "launch",
+            "mainClass": "app.basic.SortingTestCaseGenerator",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SortPractice",
+            "request": "launch",
+            "mainClass": "app.basic.SortPractice",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WordBreakII",
             "request": "launch",
             "mainClass": "app.dp.no140_wordbreakII.WordBreakII",
