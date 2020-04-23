@@ -57,15 +57,19 @@ public class SortPractice {
 
     // use tmp is to reduce the memory cost
     public static void mergeSort(int[] nums) {
+        if (nums == null) {
+            return;
+        }
         int[] tmp = new int[nums.length];
         mergeSort(nums, 0, nums.length - 1, tmp);
     }
-    
+
     /**
      * divide method
+     * 
      * @param nums
      * @param start inclusive
-     * @param end inclusive
+     * @param end   inclusive
      * @param tmp
      */
     public static void mergeSort(int[] nums, int start, int end, int[] tmp) {
@@ -77,7 +81,7 @@ public class SortPractice {
             // conquer
             merge(nums, start, mid, end, tmp);
         }
-    } 
+    }
 
     private static void merge(int[] nums, int start, int mid, int end, int[] tmp) {
         int left = start, right = mid + 1, tmpIdx = start;
@@ -105,6 +109,9 @@ public class SortPractice {
     }
 
     public static void bubbleSort(int[] nums) {
+        if (nums == null) {
+            return;
+        }
         int exchange = nums.length - 1;
         while (exchange != 0) {
             int bound = exchange;
@@ -123,6 +130,9 @@ public class SortPractice {
     }
 
     public static void selectionSort(int[] nums) {
+        if (nums == null) {
+            return;
+        }
         // find global min index and swap the value with current i
         for (int i = 0; i < nums.length - 1; i++) {
             int globalMinIdx = i;
@@ -144,8 +154,8 @@ public class SortPractice {
         // copy a new array to keep the original unsorted one untact
         int[] nums = Arrays.copyOf(original, original.length);
         // get the sorting method obj
-        Method sortingMethod =  sortingClass.getMethod(sortingName, int[].class);
-        
+        Method sortingMethod = sortingClass.getMethod(sortingName, int[].class);
+
         // invoke the method and time
         long startTime = System.currentTimeMillis(), endTime = 0;
         sortingMethod.invoke(sortingClass, nums);
@@ -153,16 +163,22 @@ public class SortPractice {
 
         // check the correction
         System.out.println("============================= " + sortingName + " =============================");
-        System.out.println("Result: " + (Arrays.equals(correct, nums) ? "correct" : "wrong" )+ "\nTime Cost: " + (endTime - startTime) + " ms\n");
+        System.out.println("Result: " + (Arrays.equals(correct, nums) ? "correct" : "wrong") + "\nTime Cost: "
+                + (endTime - startTime) + " ms\n");
     }
 
-    public static void sortingTester(String sortingName, int[] original, int[] correct)
-            throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException,
-            SecurityException {
+    public static void sortingTester(Object obj, String sortingName, int[] original, int[] correct) throws IllegalAccessException,
+            IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+        Class<?> sortingClass = obj.getClass();
+        sortingTester(sortingClass, sortingName, original, correct);
+    }
+
+    public static void sortingTester(String sortingName, int[] original, int[] correct) throws IllegalAccessException,
+            IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         sortingTester(SortPractice.class, sortingName, original, correct);
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         int size = 1000000, bound = 100000;
         int[] original = SortingTestCaseGenerator.SortingCases(size, bound);
         int[] correct = Arrays.copyOf(original, size);
@@ -175,7 +191,8 @@ public class SortPractice {
         /*********** mergeSort ***************/
         sortingTester("mergeSort", original, correct);
         /*********** old mergeSort ***************/
-        // sortingTester(app.sorting.basic.CommonSort.class, "mergeSort", original, correct);
+        // sortingTester(app.sorting.basic.CommonSort.class, "mergeSort", original,
+        // correct);
         /*********** quickSort ***************/
         sortingTester("quickSort", original, correct);
         /*********** original quickSort ***************/
