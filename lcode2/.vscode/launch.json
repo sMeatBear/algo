@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BinarySearchPractices",
+            "request": "launch",
+            "mainClass": "app.search.binary.binarysearchpractices.BinarySearchPractices",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SortingTestCaseGenerator",
             "request": "launch",
             "mainClass": "app.basic.SortingTestCaseGenerator",
