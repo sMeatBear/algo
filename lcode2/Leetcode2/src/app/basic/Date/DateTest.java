@@ -1,6 +1,5 @@
 package app.basic.Date;
 
-import java.time.Clock;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -15,8 +14,8 @@ public class DateTest {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        LocalDate ld = LocalDate.now();
-        LocalTime t = LocalTime.now();
+        // LocalDate ld = LocalDate.now();
+        // LocalTime t = LocalTime.now();
         LocalDateTime lDT = LocalDateTime.now();
         DateTimeFormatter dTF = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
