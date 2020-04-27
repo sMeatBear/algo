@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LongestIncSubstrII",
+            "request": "launch",
+            "mainClass": "app.dp.no300_longestincsubstr.LongestIncSubstrII",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DateTest",
             "request": "launch",
             "mainClass": "app.basic.Date.DateTest",
