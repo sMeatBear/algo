@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PrintReversely",
+            "request": "launch",
+            "mainClass": "app.basic.recursion.PrintReversely",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DiagonalTraversal",
             "request": "launch",
             "mainClass": "app.array.diagonaltraversal.DiagonalTraversal",
