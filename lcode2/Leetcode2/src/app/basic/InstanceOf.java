@@ -17,9 +17,12 @@ public class InstanceOf {
         }
         Child c = new Child();
         Father c2 = new Child();
-        System.out.println("c instanceof f : " + (c instanceof Father));
-        System.out.println("c2 instance of f: " + (c2 instanceof Father));
-        System.out.println("c2 introduce: " + c2.introduce());
+        Object c3 = new Child();
+        System.out.println("c instanceof f : " + (c instanceof Father)); // true
+        System.out.println("c2 instance of f: " + (c2 instanceof Father)); // true
+        System.out.println("c2 introduce: " + c2.introduce()); // "Child obj"
         System.out.println("null instance of f: " + (null instanceof Object)); // false
+        System.out.println("Is c2 instance of Child: " + (c2 instanceof Child)); // true
+        System.out.println("Is c3 instance of Child: " + (c3 instanceof Child)); // true
     }
 }
