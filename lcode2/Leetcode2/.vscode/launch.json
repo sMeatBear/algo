@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Linked",
+            "request": "launch",
+            "mainClass": "app.basic.linkedlist.Linked",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SymmetricTree",
+            "request": "launch",
+            "mainClass": "app.tree.no101_issymmetric.SymmetricTree",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - InsertIntoSorted",
             "request": "launch",
             "mainClass": "app.linear.linkedlist.insertintosortedlinkedlist.InsertIntoSorted",

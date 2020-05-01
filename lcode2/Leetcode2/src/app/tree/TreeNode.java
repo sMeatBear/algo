@@ -18,7 +18,7 @@ public class TreeNode {
     /**
      * Build a tree by level order
      * @param nums level order data (If there is empty node in between, use null to represent)
-     * @return
+     * @return the root reference
      */
     public static TreeNode buildTreeInLvlOrder(Integer[] nums) {
         if (nums == null || nums.length < 1) {
