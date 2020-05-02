@@ -82,21 +82,21 @@ public class MyMath {
     }
     
     public static double pow(double x, int n) {
-            // corner case
-            if (x == 0 || x == 1) {
-                return x;
-            }
-            if (x == -1) {
-                return n % 2 == 0 ? 1 : -1;
-            } 
+        // corner case
+        if (x == 0 || x == 1) {
+            return x;
+        }
+        if (x == -1) {
+            return n % 2 == 0 ? 1 : -1;
+        } 
 
-            if (n == 0) {
-                return 1;
-            }
-            if (n > 0) {
-                return pow(x, n - 1);
-            }
-            return 1.0 / x * pow(x, n + 1);
+        if (n == 0) {
+            return 1;
+        }
+        if (n > 0) {
+            return pow(x, n - 1);
+        }
+        return 1.0 / x * pow(x, n + 1);
     }
 
     public static void main(String[] args) {
