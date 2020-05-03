@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Subset",
+            "request": "launch",
+            "mainClass": "app.backtracking.subset.Subset",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - KthSmallestMatrix",
             "request": "launch",
             "mainClass": "app.sorting.no378_kthsmallestinmatrix.KthSmallestMatrix",
