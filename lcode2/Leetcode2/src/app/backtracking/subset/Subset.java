@@ -12,8 +12,8 @@ public class Subset {
     }
 
     public static void backtrack(char[] chs, int position, List<Character> tmp, List<List<Character>> res) {
-        // set is no duplicate, so we just move the index to the end and decide each element is included
-        // or not
+        // set is no duplicate, so we just move the index to the end 
+        // and decide each element is included or not
         if (position < chs.length) {
             // include this element
             tmp.add(chs[position]);
