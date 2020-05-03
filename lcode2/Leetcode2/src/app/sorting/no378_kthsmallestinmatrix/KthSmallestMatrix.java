@@ -17,9 +17,41 @@ import java.util.Queue;
  * return 13. Note: You may assume k is always valid, 1 ≤ k ≤ n2.
  */
 class Solution {
-    // approach 3:
+    // approach 3: Dijkstra
     public int kthSmallest(int[][] matrix, int k) {
-        return 0;
+        // coner case
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return Integer.MIN_VALUE;
+        }
+        // Use a min heap to realize Dijkstra search (Best First Search (UCS))
+        // store <row, col, value>
+        // min heap
+        PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) -> {
+            if (a[2] < b[2]) {
+                return -1;
+            } else {
+                return 1;
+            }
+        });
+        boolean[][] visited = new boolean[matrix.length][matrix.length];
+        int count = 0;
+        int[] curr = null;
+        queue.offer(new int[]{0, 0, matrix[0][0]});
+        while (count < k) {
+            curr = queue.poll();
+            int newRow = curr[0] + 1, newCol = curr[1] + 1;
+            // find next down and right and add to queue
+            if (newRow < matrix.length && !visited[newRow][curr[1]]) {
+                queue.offer(new int[] {newRow, curr[1], matrix[newRow][curr[1]]});
+                visited[newRow][curr[1]] = true;
+            }
+            if (newCol < matrix.length && !visited[curr[0]][newCol]) {
+                queue.offer(new int[] {curr[0], newCol, matrix[curr[0]][newCol]});
+                visited[curr[0]][newCol] = true;
+            }
+            count++;
+        }
+        return curr[2];
     }
 
     // approach 2: n pointers using queue
@@ -86,6 +118,9 @@ class Solution {
 
 public class KthSmallestMatrix {
     public static void main(String[] args) {
-        
+        int[][] matrix = new int[][] {{1,3,5},{6,7,12},{11,14,14}};
+        Solution sol = new Solution();
+        int res = sol.kthSmallest(matrix, 6);
+        System.out.println(res);
     }
 }
