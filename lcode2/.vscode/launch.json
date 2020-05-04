@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - NumComplement",
+            "request": "launch",
+            "mainClass": "app.math.bitoperation.no476_numcomplement.NumComplement",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Subset",
             "request": "launch",
             "mainClass": "app.backtracking.subset.Subset",
