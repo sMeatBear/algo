@@ -4,13 +4,54 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import app.basic.SortingTestCaseGenerator;
-
 public class Test {
+
     /**
      * 
      * Q3
      */
+    // approach 2: math
+    public List<String> permutationString(String str) {
+        if (str == null) {
+            return null;
+        }
+
+        char[] sArr = str.toCharArray();
+        List<String> res = new ArrayList<>();
+        Arrays.sort(sArr);
+        res.add(new String(sArr));
+        while (permutation(sArr)) {
+            res.add(new String(sArr));
+        }
+
+        return res;
+    }
+
+    public boolean permutation(char[] sArr) {
+        // 1. find the first descending element
+        int descIndex = sArr.length - 2;
+        for (; descIndex >= 0 && sArr[descIndex] >= sArr[descIndex + 1]; descIndex--) {}
+        if (descIndex < 0) {
+            return false;
+        }
+
+        // 2. find the last element that is greater than sArr[descIndex]
+        // if exchange a same element to the front and then sort, it will procude duplicate situation. It has to be a larger element!
+        int lastLarger = descIndex + 1;
+        for (; lastLarger < sArr.length - 1 && sArr[descIndex] < sArr[lastLarger + 1]; lastLarger++) {}
+
+        // 3. swap desc and last larger
+        char tmp = sArr[descIndex];
+        sArr[descIndex] = sArr[lastLarger];
+        sArr[lastLarger] = tmp;
+
+        // 4. sort
+        Arrays.sort(sArr, descIndex + 1, sArr.length);
+
+        return true;
+    }
+
+    // approach 1: dfs
     public List<String> permutationStr(String str) {
         if (str == null) {
             return null;
@@ -99,7 +140,7 @@ public class Test {
 
     public static void main(String[] args) {
         Test t = new Test();
-        String str = "abcd";
-        System.out.println(t.permutationStr(str));
+        String str = "abcc";
+        System.out.println(t.permutationString(str));
     }
 }
