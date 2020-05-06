@@ -14,6 +14,9 @@ public class Timer {
         }
         try {
             final Method method = cl.getMethod(methodName, parameterTypes);
+            // for default class
+            method.setAccessible(true);
+
             final long start = System.currentTimeMillis();
             Object res = method.invoke(obj, args);
             System.out.println("\nTime of " + methodName + ": " +
