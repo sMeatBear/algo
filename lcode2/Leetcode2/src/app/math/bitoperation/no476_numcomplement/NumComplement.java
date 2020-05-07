@@ -30,7 +30,7 @@ class Solution {
         // highestOneBit returns the value with leftmost 1 in given number followed by all zero
         // << 1 then - 1 means all 1 from leftmost 1 to the rightmost
         int mask = (Integer.highestOneBit(num) << 1) - 1;
-        return ~num & mask;
+        return num ^ mask;
     }
 
     // Approach 1: XOR
