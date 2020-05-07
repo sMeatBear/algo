@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - HeapPollution",
+            "request": "launch",
+            "mainClass": "app.basic.generics.HeapPollution",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WordCount",
             "request": "launch",
             "mainClass": "app.string.wordcount.WordCount",
