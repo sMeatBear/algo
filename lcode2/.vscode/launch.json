@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CodingPad",
+            "request": "launch",
+            "mainClass": "app.CodingPad",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - HeapPollution",
             "request": "launch",
             "mainClass": "app.basic.generics.HeapPollution",
