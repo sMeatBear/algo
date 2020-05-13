@@ -1,6 +1,7 @@
 package app.basic.enumtest;
 
 public enum Planet {
+    // like fixed instances
     MARS, EARTH(1.414), JUPITER, MERCURY, NEPTUNE, VENUS, SATURN, URANUS;
 
     private double mass;
@@ -15,7 +16,7 @@ public enum Planet {
     }
 
     public static void main(String[] args) {
-        System.out.println(EARTH.getMass());    
+        System.out.println(EARTH.ordinal());    
     }
 }
 
