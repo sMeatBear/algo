@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RemoveKDigits",
+            "request": "launch",
+            "mainClass": "app.math.no402_removekdigits.RemoveKDigits",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Planet",
             "request": "launch",
             "mainClass": "app.basic.enumtest.Planet",
