@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MaxSumCircularSub",
+            "request": "launch",
+            "mainClass": "app.array.no918_maxsumcircularsub.MaxSumCircularSub",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UniqueBST",
             "request": "launch",
             "mainClass": "app.tree.no95_uniquebst.UniqueBST",
