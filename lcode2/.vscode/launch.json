@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UniqueBST",
+            "request": "launch",
+            "mainClass": "app.tree.no95_uniquebst.UniqueBST",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ListIteratorTest",
+            "request": "launch",
+            "mainClass": "app.linear.linkedlist.listiterator.ListIteratorTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RemoveKDigits",
             "request": "launch",
             "mainClass": "app.math.no402_removekdigits.RemoveKDigits",
