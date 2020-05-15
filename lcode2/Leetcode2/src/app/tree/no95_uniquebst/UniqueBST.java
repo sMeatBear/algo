@@ -1,8 +1,6 @@
 package app.tree.no95_uniquebst;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 
 import app.tree.TreeNode;
