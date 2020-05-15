@@ -64,7 +64,14 @@ public class TreeNode {
 
         StringBuilder sb = new StringBuilder();
         sb.append('[');
-        for (Integer val : strList) {
+        for (int i = 0; i < strList.size(); i++) {
+            // remove all the nulls at the end
+            int j;
+            for (j = i; j < strList.size() && strList.get(j) == null; j++) {}
+            if (j == strList.size()) {
+                break;
+            }
+            Integer val = strList.get(i);
             sb.append(val == null ? "null" : val).append(',');
         }
 
