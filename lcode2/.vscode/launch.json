@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RandomUtil",
+            "request": "launch",
+            "mainClass": "app.random.RandomUtil",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MaxSumCircularSub",
             "request": "launch",
             "mainClass": "app.array.no918_maxsumcircularsub.MaxSumCircularSub",
