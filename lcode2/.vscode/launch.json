@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StackOverFlowTest",
+            "request": "launch",
+            "mainClass": "app.basic.recursion.StackOverFlowTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - RandomUtil",
             "request": "launch",
             "mainClass": "app.random.RandomUtil",
