@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UncrossedLines",
+            "request": "launch",
+            "mainClass": "app.backtracking.no1035_uncrosselines.UncrossedLines",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StackOverFlowTest",
             "request": "launch",
             "mainClass": "app.basic.recursion.StackOverFlowTest",
