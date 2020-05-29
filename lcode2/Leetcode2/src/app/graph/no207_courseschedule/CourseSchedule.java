@@ -77,7 +77,7 @@ class Solution {
             if (!result[0]) {
                 return false;
             }
-            // set all the paths expanded from i is acyclic !
+            // all the nodes expanded from node i has been checked as acyclic
             checked[i] = true;
         }
 
