@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CourseSchedule",
+            "request": "launch",
+            "mainClass": "app.graph.no207_courseschedule.CourseSchedule",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BinaryPartition",
             "request": "launch",
             "mainClass": "app.search.no886_binarypartition.BinaryPartition",
