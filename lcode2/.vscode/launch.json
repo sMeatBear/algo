@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Knapsack",
+            "request": "launch",
+            "mainClass": "app.dp.knapsack.Knapsack",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CourseSchedule",
             "request": "launch",
             "mainClass": "app.graph.no207_courseschedule.CourseSchedule",
