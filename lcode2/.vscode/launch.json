@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - EditDistance",
+            "request": "launch",
+            "mainClass": "app.dp.no72_editdistance.EditDistance",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Knapsack",
             "request": "launch",
             "mainClass": "app.dp.knapsack.Knapsack",
