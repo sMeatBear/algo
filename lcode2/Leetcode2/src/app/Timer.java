@@ -19,7 +19,7 @@ public class Timer {
 
             final long start = System.currentTimeMillis();
             Object res = method.invoke(obj, args);
-            System.out.println("\nTime of " + methodName + ": " +
+            System.out.println("\nTime cost of " + methodName + ": " +
             (System.currentTimeMillis() - start) + " ms");
             return res;
 		} catch (NoSuchMethodException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
