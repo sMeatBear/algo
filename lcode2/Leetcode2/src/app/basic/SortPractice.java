@@ -148,6 +148,55 @@ public class SortPractice {
         }
     }
 
+    // 6/9/2020 insert sort
+    public static void insertSort(int[] nums) {
+        // sanity check
+        if (nums == null) {
+            return;
+        }
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
+                int insertElem = nums[i];
+                // compare forward to find the first element in j-1 smaller than insertElem
+                int j = i;
+                nums[j] = nums[j - 1];
+                for (j = i - 1; j > 0 && nums[j - 1] > insertElem; j--) {
+                    nums[j] = nums[j - 1];
+                }
+                nums[j] = insertElem;
+            }
+        }
+    }
+
+    public static void insertSortWithSentinel(int[] nums) {
+        // sanity check
+        if (nums == null) {
+            return;
+        }
+        // set newArr's 0 position as the sentinel
+        int[] newNums = new int[nums.length + 1];
+        for (int i = 1; i < newNums.length; i++) {
+            newNums[i] = nums[i - 1];
+        }
+        // sort, newNums[0] as the sentinel
+        for (int i = 2; i < newNums.length; i++) {
+            if (newNums[i] < newNums[i - 1]) {
+                newNums[0] = newNums[i];
+                // compare forward to find the first element in j-1 smaller than insertElem
+                int j = i;
+                newNums[j] = newNums[j - 1];
+                for (j = i - 1; newNums[j - 1] > newNums[0]; j--) {
+                    newNums[j] = newNums[j - 1];
+                }
+                newNums[j] = newNums[0];
+            }
+        }
+        // copy the result
+        for (int i = 1; i < newNums.length; i++) {
+            nums[i - 1] = newNums[i];
+        }
+    }
+
     public static void testSorting(Class<?> sortingClass, String sortingName, int[] original, int[] correct)
             throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException,
             SecurityException {
@@ -179,22 +228,26 @@ public class SortPractice {
     }
 
     public static void main(String[] args) throws Exception {
-        int size = 1000000, bound = 100000;
+        int size = 100000, bound = 100000;
         int[] original = SortingTestCaseGenerator.SortingCases(size, bound);
         int[] correct = Arrays.copyOf(original, size);
         Arrays.sort(correct);
 
         /*********** selection ***************/
-        // testSorting("selectionSort", original, correct);
+        testSorting("selectionSort", original, correct);
         /*********** bubbleSort ***************/
-        // testSorting("bubbleSort", original, correct);
+        testSorting("bubbleSort", original, correct);
         /*********** mergeSort ***************/
-        testSorting("mergeSort", original, correct);
+        // testSorting("mergeSort", original, correct);
         /*********** old mergeSort ***************/
         // testSorting(app.sorting.basic.CommonSort.class, "mergeSort", original,
         // correct);
         /*********** quickSort ***************/
-        testSorting("quickSort", original, correct);
+        // testSorting("quickSort", original, correct);
+        /*********** insertSort ***************/
+        testSorting("insertSort", original, correct);
+        /*********** insertSortWithSentinel ***************/
+        testSorting("insertSortWithSentinel", original, correct);
         /*********** original quickSort ***************/
         testSorting(Arrays.class, "sort", original, correct);
     }
