@@ -5,6 +5,42 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 public class SortPractice {
+    // 6/10/2020
+    public static void quickSortV2(int[] nums) {
+        quickSortV2(nums, 0, nums.length - 1);
+    }
+    public static void quickSortV2(int[] nums, int begin, int end) {
+        if (begin < end) {
+            int pivotIdx = partitionV2(nums, begin, end);
+            quickSortV2(nums, begin, pivotIdx - 1);
+            quickSortV2(nums, pivotIdx + 1, end);
+        }
+    }
+    private static int partitionV2(int[] nums, int begin, int end) {
+        // take begin index as the pivot idx
+        int pivotVal = nums[begin];
+        while (begin < end) {
+            // we use pivot value instead of nums[begin]
+            while (begin < end && pivotVal <= nums[end]) {
+                end--;
+            }
+            // out of loop which means we need to swap current element to the front
+            // *incomplete swap (save time)
+            // **don't change it to nums[begin++] (we need to care about when begin == end !)
+            nums[begin] = nums[end];
+            // from front to end check
+            while (begin < end && nums[begin] <= pivotVal) {
+                begin++;
+            }
+            // swap
+            nums[end] = nums[begin];
+        }
+        // put the pivot value to the final position
+        nums[begin] = pivotVal;
+        return begin;
+    }
+
+    /* ----------------------------------------------------------- */
     public static void quickSort(int[] nums) {
         if (nums == null) {
             return;
@@ -228,26 +264,28 @@ public class SortPractice {
     }
 
     public static void main(String[] args) throws Exception {
-        int size = 100000, bound = 100000;
+        int size = 1000000, bound = 1000000;
         int[] original = SortingTestCaseGenerator.SortingCases(size, bound);
         int[] correct = Arrays.copyOf(original, size);
         Arrays.sort(correct);
 
         /*********** selection ***************/
-        testSorting("selectionSort", original, correct);
+        // testSorting("selectionSort", original, correct);
         /*********** bubbleSort ***************/
-        testSorting("bubbleSort", original, correct);
+        // testSorting("bubbleSort", original, correct);
         /*********** mergeSort ***************/
         // testSorting("mergeSort", original, correct);
         /*********** old mergeSort ***************/
         // testSorting(app.sorting.basic.CommonSort.class, "mergeSort", original,
         // correct);
-        /*********** quickSort ***************/
-        // testSorting("quickSort", original, correct);
+        /*********** old quickSort ***************/
+        testSorting("quickSort", original, correct);
+        /*********** quickSort V2 ***************/
+        testSorting("quickSortV2", original, correct);
         /*********** insertSort ***************/
-        testSorting("insertSort", original, correct);
+        // testSorting("insertSort", original, correct);
         /*********** insertSortWithSentinel ***************/
-        testSorting("insertSortWithSentinel", original, correct);
+        // testSorting("insertSortWithSentinel", original, correct);
         /*********** original quickSort ***************/
         testSorting(Arrays.class, "sort", original, correct);
     }
