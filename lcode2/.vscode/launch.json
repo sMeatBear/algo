@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SplitTest",
+            "request": "launch",
+            "mainClass": "app.string.basic.SplitTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ValidateIpAddr",
+            "request": "launch",
+            "mainClass": "app.string.no468_validateipaddress.ValidateIpAddr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Test",
             "request": "launch",
             "mainClass": "app.string.basic.Test",
