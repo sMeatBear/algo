@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SurroundedRegions",
+            "request": "launch",
+            "mainClass": "app.search.dfs.no130_surroundedregions.SurroundedRegions",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SplitTest",
             "request": "launch",
             "mainClass": "app.string.basic.SplitTest",
