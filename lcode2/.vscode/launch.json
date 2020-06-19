@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LongestDupSubstr",
+            "request": "launch",
+            "mainClass": "app.string.no1044_longestdupsubstr.LongestDupSubstr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SurroundedRegions",
             "request": "launch",
             "mainClass": "app.search.dfs.no130_surroundedregions.SurroundedRegions",
