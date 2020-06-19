@@ -31,7 +31,7 @@ class Solution {
     private static final long q = (1 << 31) - 1;
     private static final long R = 256;
         
-    public String longestDupSubstring(String S) {      
+    public String longestDupSubstringRef(String S) {      
         int left = 2;
         int right = S.length() - 1;
         int start = 0;
@@ -87,16 +87,16 @@ class Solution {
     }
 
     // approach 2: (binary search + hashset (rolling hashing)) tc: O(nlogn); sc:
-    // O(n) fail !
+    // O(n) fail ! -> + hashmap
     private int[] powerCache;
 
-    public String longestDupSubstring2(String S) {
+    public String longestDupSubstring(String S) {
         char[] sArr = S.toCharArray();
-        // the substr len is [0, sArr.len - 1];
-        int l = 0, r = sArr.length - 1;
+        // the substr len is [0, sArr.len];
+        int l = 0, r = sArr.length;
         int maxLen = 0, beginIdx = 0;
         // initialize powercache
-        powerCache = new int[sArr.length];
+        powerCache = new int[sArr.length + 1];
         // lower case english letter
         int base = 26;
         powerCache[0] = 1;
@@ -124,17 +124,30 @@ class Solution {
 
     // O(n)
     private int checkLen(char[] sArr, int len) {
-        Set<Long> record = new HashSet<>();
+        // record the <hash, begin index>
+        Map<Integer, List<Integer>> record = new HashMap<>();
         int bound = sArr.length - len;
-        long prevHash = hash(sArr, 0, len);
-        record.add(prevHash);
+        int prevHash = hash(sArr, 0, len);
+        List<Integer> beginIdxs = new ArrayList<>();
+        beginIdxs.add(0);
+        record.put(prevHash, beginIdxs);
         // i means previous begin index
         for (int i = 0; i < bound; i++) {
             // substract the first and add a new one (sliding window)
-            long hash = rollingHash(sArr[i], sArr[i + len], len, prevHash);
-            if (!record.add(hash)) {
-                return i + 1;
+            int hash = rollingHash(sArr[i], sArr[i + len], len, prevHash);
+            List<Integer> idxList = record.get(hash);
+            int currIdx = i + 1;
+            if (idxList != null) {
+                // handle collision
+                for (int begin : idxList) {
+                    if (compare(sArr, currIdx, begin, len)) {
+                        return currIdx;
+                    }
+                }
             }
+            beginIdxs = new ArrayList<>();
+            beginIdxs.add(currIdx);
+            record.put(hash, beginIdxs);
             prevHash = hash;
         }
         // no duplicate substr
@@ -142,16 +155,25 @@ class Solution {
     }
 
     /** end is excluded */
-    private long hash(char[] sArr, int begin, int len) {
-        long hashVal = 0;
+    private int hash(char[] sArr, int begin, int len) {
+        int hashVal = 0;
         for (int i = len - 1; i >= 0; i--, begin++) {
             hashVal += (sArr[begin] - 'a' + 1) * powerCache[i];
         }
-        return hashVal;
+        return hashVal & 0x7fffffff; 
     }
 
-    private long rollingHash(char remove, char add, int len, long hash) {
+    private int rollingHash(char remove, char add, int len, int hash) {
         return (hash * 26 - (remove - 'a' + 1) * powerCache[len] + (add - 'a' + 1)) & 0x7fffffff;
+    }
+
+    private boolean compare(char[] sArr, int i1, int i2, int len) {
+        for (int i = 0; i < len; i++) {
+            if (sArr[i1++] != sArr[i2++]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // approach 1: dp (tc: O(n^2), sc: O(n)) -- time limit exceeded
@@ -193,7 +215,7 @@ class Solution {
 public class LongestDupSubstr {
     public static void main(String[] args) {
         Solution sol = new Solution();
-        String res = sol.longestDupSubstring("bananaaaaaaaaaaaaaaa");
+        String res = sol.longestDupSubstring2("banana");
         System.out.println(res);
     }
 }
