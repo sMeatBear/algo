@@ -215,7 +215,7 @@ class Solution {
 public class LongestDupSubstr {
     public static void main(String[] args) {
         Solution sol = new Solution();
-        String res = sol.longestDupSubstring2("banana");
+        String res = sol.longestDupSubstring("banana");
         System.out.println(res);
     }
 }

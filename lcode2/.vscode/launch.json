@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DungeonGame",
+            "request": "launch",
+            "mainClass": "app.dp.no174_dungeongame.DungeonGame",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LongestDupSubstr",
             "request": "launch",
             "mainClass": "app.string.no1044_longestdupsubstr.LongestDupSubstr",
