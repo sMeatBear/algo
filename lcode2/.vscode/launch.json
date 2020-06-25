@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MyLinkedList",
+            "request": "launch",
+            "mainClass": "app.ooddesign.doublylinkedlist.MyLinkedList",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - DungeonGame",
             "request": "launch",
             "mainClass": "app.dp.no174_dungeongame.DungeonGame",
