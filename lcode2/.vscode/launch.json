@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - WordSearch",
+            "request": "launch",
+            "mainClass": "app.search.no212_wordsearch.WordSearch",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ReconItr",
             "request": "launch",
             "mainClass": "app.graph.no332_reconitr.ReconItr",
