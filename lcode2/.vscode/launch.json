@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReconItr",
+            "request": "launch",
+            "mainClass": "app.graph.no332_reconitr.ReconItr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MyLinkedList",
             "request": "launch",
             "mainClass": "app.ooddesign.doublylinkedlist.MyLinkedList",
