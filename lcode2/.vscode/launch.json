@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PrisonCells",
+            "request": "launch",
+            "mainClass": "app.linear.no957_prisoncells.PrisonCells",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PrisonCells",
+            "request": "launch",
+            "mainClass": "app.linear.prisoncells.PrisonCells",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WordSearch",
             "request": "launch",
             "mainClass": "app.search.no212_wordsearch.WordSearch",
