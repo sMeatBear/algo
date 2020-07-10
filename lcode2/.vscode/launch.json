@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MaxWidthBinaryTree",
+            "request": "launch",
+            "mainClass": "app.tree.no662_maxwidthbt.MaxWidthBinaryTree",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ThreeSum",
             "request": "launch",
             "mainClass": "app.linear.no15_3sum.ThreeSum",
