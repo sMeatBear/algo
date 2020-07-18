@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TopKFreqElem",
+            "request": "launch",
+            "mainClass": "app.linear.no347_topkfreqelem.TopKFreqElem",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MaxWidthBinaryTree",
             "request": "launch",
             "mainClass": "app.tree.no662_maxwidthbt.MaxWidthBinaryTree",
