@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LeastCommonMultiple",
+            "request": "launch",
+            "mainClass": "app.math.lcm.LeastCommonMultiple",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GreatestCommonDivisor",
+            "request": "launch",
+            "mainClass": "app.math.gcd.GreatestCommonDivisor",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Dec2Bin",
+            "request": "launch",
+            "mainClass": "app.math.dec2bin.Dec2Bin",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WordSearch",
             "request": "launch",
             "mainClass": "app.search.no212_wordsearch.second_practice.WordSearch",
