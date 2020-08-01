@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - IntegerCache",
+            "request": "launch",
+            "mainClass": "app.basic.IntegerCache",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - WordBreakII",
             "request": "launch",
             "mainClass": "app.string.no140_wordbreakII.WordBreakII",
