@@ -41,8 +41,27 @@ The flattened tree should look like:
  * = left; this.right = right; } }
  */
 class Solution {
+    // approach 3: insert left subtree into curr node and right subtree
+    public void flatten(TreeNode curr) {
+        while (curr != null) {
+            if (curr.left != null) {
+                TreeNode next = curr.left;
+                TreeNode predecessor = next;
+                // ** find the last node in the left subtree as the predecessor
+                while (predecessor.right != null) {
+                    predecessor = predecessor.right;
+                }
+                // ** insert the tree
+                predecessor.right = curr.right;
+                curr.left = null;
+                curr.right = next;
+            }
+            curr = curr.right;
+        }
+    }
+
     // approach 2: recursive
-    public void flatten(TreeNode root) {
+    public void flatten2(TreeNode root) {
         if (root == null) {return;}
         preorder(root);
     }
