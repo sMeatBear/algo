@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - FourThreadPractice",
+            "request": "launch",
+            "mainClass": "app.thread.FourThreadPractice",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - IntegerVsInt",
             "request": "launch",
             "mainClass": "app.basic.IntegerVsInt",
