@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - RestoreIp",
+            "request": "launch",
+            "mainClass": "app.string.no93_restoreip.RestoreIp",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FourThreadPractice",
             "request": "launch",
             "mainClass": "app.thread.FourThreadPractice",
