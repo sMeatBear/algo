@@ -17,9 +17,10 @@ public class RandomUtil {
      * @return      the list of generated random number
      * @throws IllegalArgumentException if the given range is smaller than required number
      */
+    private static Random randomNumbersGenerator = new Random();
     public static List<Integer> getRandomNumbers(int begin, int end, int num) {
+        Random rand = randomNumbersGenerator;
         Set<Integer> result = new HashSet<>();
-        Random rand = new Random();
         int range = end - begin;
         if (range < num) {
             throw new IllegalArgumentException("The range is smaller than required random number");
@@ -98,6 +99,6 @@ public class RandomUtil {
         int[] arr = new int[] {1, 2, 3, 4, 5, 6};
         shuffleArray(arr);
         System.out.println(Arrays.toString(arr));
-        System.out.println(getRandomNumbers(1, 4, 2));
+        System.out.println(getRandomNumbers(1, 33, 5));
     }
 }
