@@ -1,10 +1,43 @@
 package app.math.permutation;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Permutation {
+    public static <T> List<List<T>> getAllPermutation(T[] nums) {
+        List<List<T>> result = new ArrayList<>();
+        backtrack(nums, 0, result);
+        return result;
+    }
+    
+
+    private static <T> void backtrack(T[] nums, int i, List<List<T>> result) {
+        if (i == nums.length) {
+            List<T> res = new ArrayList<>();
+            for (T n : nums) {
+                res.add(n);
+            }
+            result.add(res);
+        }
+
+        for (int j = i; j < nums.length; j++) {
+            swap(nums, i, j);
+            backtrack(nums, i + 1, result);
+            // backtrack
+            swap(nums, i, j);
+        }
+    }
+
+    public static <T> void swap(T[] nums, int i, int j) {
+        T temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
     /**
      * find the next permutation
+     * 
      * @param nums the array which is needed to do permutation
      */
     public static boolean nextPermutation(int[] nums) {
@@ -71,5 +104,8 @@ public class Permutation {
         do {
             System.out.println(Arrays.toString(nums));
         } while(Permutation.nextPermutation(nums));
+
+        String[] strs = new String[] {"1", "2", "3"};
+        System.out.println(getAllPermutation(strs));
     }
 }
