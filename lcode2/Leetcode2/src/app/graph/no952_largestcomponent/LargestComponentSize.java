@@ -8,10 +8,10 @@ class Solution {
     @SuppressWarnings("unchecked")
     public int largestComponentSize(int[] A) {
         // build the graph
-        List[] graph = new ArrayList[A.length];
+        List<Integer>[] graph = new ArrayList[A.length];
         // initialize
         for (int i = 0; i < graph.length; i++) {
-            graph[i] = new ArrayList();
+            graph[i] = new ArrayList<>();
         }
         for (int i = 0; i < A.length; i++) {
             for (int j = i + 1; j < A.length; j++) {
@@ -36,15 +36,15 @@ class Solution {
         return max[0];
     }
     
-    private void dfs(List[] graph, int i, boolean[] visited, int[] count, int[] max) {
+    private void dfs(List<Integer>[] graph, int i, boolean[] visited, int[] count, int[] max) {
         if (visited[i]) {return;}
         
         visited[i] = true;
         count[0]++;
         max[0] = Math.max(max[0], count[0]);
-        List next = graph[i];
-        for (Object n : next) {
-            dfs(graph, (int) n, visited, count, max);
+        List<Integer> next = graph[i];
+        for (int n : next) {
+            dfs(graph, n, visited, count, max);
         }
     }
     
