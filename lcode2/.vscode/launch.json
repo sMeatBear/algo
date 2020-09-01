@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - PredictWinner",
+            "request": "launch",
+            "mainClass": "app.search.no486_predictwinner.PredictWinner",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LargestComponentSize",
             "request": "launch",
             "mainClass": "app.graph.no952_largestcomponent.LargestComponentSize",
