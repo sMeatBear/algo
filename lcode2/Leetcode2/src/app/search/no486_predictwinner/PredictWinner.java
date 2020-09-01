@@ -16,7 +16,7 @@ class Solution {
         }
         int max = min(nums, begin, end - 1, a, b);
         // ** pruning for previous min layer
-        if (max >= b) {return max + nums;}
+        if (max >= b) {return max + nums[end];}
         // **** update a: the returned mins' restrictions are different (+nums[end] and +nums[begin])
         //      if nums[end] is larger then that means the second min val needs to higher bar to reach
         //      the first max's value level or beyond vice versa. So we add (nums[end] - nums[begin])
@@ -32,8 +32,8 @@ class Solution {
         // ** pruning for previous max layer
         if (min <= a) {return min - nums[end];}
         // **** because the nums[begin] and nums[end] is differnt, we need to adjust min's val
-        b = Math.min(min - (nums[end] - nums[begin]), b);
-        return Math.min(min - nums[end], max(nums, begin + 1, end, a, b) - nums[begin]);
+        b = Math.min(min - nums[end] + nums[begin], b);
+        return Math.min(min, max(nums, begin + 1, end, a, b) - nums[begin]);
     }
 
 }
