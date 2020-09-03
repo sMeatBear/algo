@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - IOTest",
+            "request": "launch",
+            "mainClass": "app.test.io.IOTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PredictWinner",
             "request": "launch",
             "mainClass": "app.search.no486_predictwinner.PredictWinner",
