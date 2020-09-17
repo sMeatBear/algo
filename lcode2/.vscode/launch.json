@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UnionFindSet",
+            "request": "launch",
+            "mainClass": "app.math.UnionFindSet",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Sudoku",
             "request": "launch",
             "mainClass": "app.search.dfs.no37_sudoku.Sudoku",
