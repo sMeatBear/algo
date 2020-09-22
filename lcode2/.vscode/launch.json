@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StaticOverride",
+            "request": "launch",
+            "mainClass": "app.basic.Inheritance.StaticOverride",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - UnionFindSet",
             "request": "launch",
             "mainClass": "app.math.UnionFindSet",
