@@ -17,6 +17,64 @@ import java.util.Map;
  * All inputs will be in lowercase. The order of your output does not matter.
  */
 
+class Solution2 {
+    private static class StringAna {
+        final int POS_PRIME = 0x7fffffff;
+        final int DEFAUT_SIZE = 26;
+        int[] count;
+        int hash = -1;
+
+        public StringAna(String str) {
+            count = new int[DEFAUT_SIZE];
+            for (int i = 0; i < str.length(); i++) {
+                char ch = str.charAt(i);
+                count[ch - 'a']++;
+            }
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (o instanceof StringAna) {
+                StringAna sa = (StringAna) o;
+                for (int i = 0; i < DEFAUT_SIZE; i++) {
+                    if (sa.count[i] != count[i]) {return false;}
+                }
+                return true;
+            }
+
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            if (hash != -1) {return hash;}
+            hash = 0;
+            int base = 1;
+            for (int i = 0; i < DEFAUT_SIZE; i++, base *= 100) {
+                hash += count[i] * base;
+            }
+            // ** remember to update the hash value
+            hash &= POS_PRIME;
+            return hash;
+        }
+    }
+    
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<StringAna, List<String>> map = new HashMap<>();
+        for (String s : strs) {
+            StringAna sa = new StringAna(s);
+            List<String> oneRes = map.get(sa);
+            if (oneRes == null) {
+                oneRes = new ArrayList<>();
+                map.put(sa, oneRes);
+            }
+            oneRes.add(s);
+        }
+        return new ArrayList<>(map.values());
+    }
+}
+
 class Solution {
     // Approach 1: BF Sort String
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -48,8 +106,9 @@ class Solution {
 
 public class GroupAnagrams {
     public static void main(String[] args) {
-        Solution s = new Solution();
+        Solution2 s = new Solution2();
         String[] strs = new String[] {"eat", "tea", "tan", "ate", "nat", "bat"};
+        // String[] strs = new String[] {"tan", "nat"};
         System.out.println(s.groupAnagrams(strs)); 
     }
 }
