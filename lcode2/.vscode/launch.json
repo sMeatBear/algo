@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - List2Array",
+            "request": "launch",
+            "mainClass": "app.test.List.List2Array",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PathTest",
+            "request": "launch",
+            "mainClass": "app.test.io.PathTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StaticOverride",
             "request": "launch",
             "mainClass": "app.basic.Inheritance.StaticOverride",
