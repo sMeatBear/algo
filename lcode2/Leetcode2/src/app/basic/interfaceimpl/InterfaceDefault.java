@@ -5,6 +5,8 @@ package app.basic.interfaceimpl;
  * 
  */
 interface CanBark {
+    // default modifier: public static final
+    String breed = "doggy";
     default void bark() {
         System.out.println("bark");
     }
@@ -25,4 +27,9 @@ public class InterfaceDefault implements CanBark, CanMakeNoise {
 
     }
 
+    public static void main(String[] args) {
+        System.out.println(InterfaceDefault.breed);
+        CanBark cb = new InterfaceDefault();
+        cb.bark();
+    }
 }
