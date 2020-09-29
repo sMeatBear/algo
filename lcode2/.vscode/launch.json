@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CovariantArr",
+            "request": "launch",
+            "mainClass": "app.basic.array.CovariantArr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MultiBound",
             "request": "launch",
             "mainClass": "app.basic.generics.MultiBound",
