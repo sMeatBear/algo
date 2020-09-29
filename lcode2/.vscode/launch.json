@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MultiBound",
+            "request": "launch",
+            "mainClass": "app.basic.generics.MultiBound",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TryBufferedReader",
+            "request": "launch",
+            "mainClass": "app.test.io.TryBufferedReader",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Concatenation",
             "request": "launch",
             "mainClass": "app.string.basic.Concatenation",
