@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - AnnotationTest",
+            "request": "launch",
+            "mainClass": "app.basic.annotation.AnnotationTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - InterfaceDefault",
             "request": "launch",
             "mainClass": "app.basic.interfaceimpl.InterfaceDefault",
