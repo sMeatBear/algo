@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - UnionFindTest",
+            "request": "launch",
+            "mainClass": "app.math.UnionFindTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - AnnotationTest",
             "request": "launch",
             "mainClass": "app.basic.annotation.AnnotationTest",
