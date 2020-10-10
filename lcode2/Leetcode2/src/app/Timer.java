@@ -13,8 +13,8 @@ public class Timer {
             cl = obj.getClass();
         }
         try {
-            final Method method = cl.getMethod(methodName, parameterTypes);
-            // for default class
+            final Method method = cl.getDeclaredMethod(methodName, parameterTypes);
+            // for default class and private
             method.setAccessible(true);
 
             final long start = System.currentTimeMillis();
