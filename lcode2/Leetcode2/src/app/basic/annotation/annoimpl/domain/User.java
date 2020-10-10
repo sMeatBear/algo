@@ -10,11 +10,11 @@ import app.basic.annotation.annoimpl.dao.TableName;
 @TableName("user_table")
 public class User {
     @ColumnName("user_name")
-    public String name;
+    private String name;
     @ColumnName("user_age")
-    public Integer age;
+    private Integer age;
     @ColumnName("user_email")
-    public String email;
+    private String email;
 
     public void setName(String name) {
         this.name = name;

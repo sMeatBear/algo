@@ -22,7 +22,7 @@ public class DataBaseAccessor implements Accessable {
         stmt.append(tableName).append("\swhere\s1=1");
 
         // 2. get all the column if it is not null
-        for (Field f : table.getFields()) {
+        for (Field f : table.getDeclaredFields()) {
             boolean columnNameExit = f.isAnnotationPresent(ColumnName.class);
             if (!columnNameExit) {
                 continue;
