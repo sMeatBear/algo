@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - AnnoTest",
+            "request": "launch",
+            "mainClass": "app.testcode.annotation.AnnoTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - QueryTest",
             "request": "launch",
             "mainClass": "app.basic.annotation.annoimpl.dao.QueryTest",
