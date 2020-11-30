@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReorganizeStrTest",
+            "request": "launch",
+            "mainClass": "app.greedy.ReorganizeStrTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReorganizeStr",
+            "request": "launch",
+            "mainClass": "app.greedy.ReorganizeStr",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StreamTest",
+            "request": "launch",
+            "mainClass": "app.basic.stream.StreamTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CountSubSet",
             "request": "launch",
             "mainClass": "app.search.countsubset.CountSubSet",
