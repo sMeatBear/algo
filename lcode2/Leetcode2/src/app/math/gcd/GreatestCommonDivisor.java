@@ -20,7 +20,20 @@ public class GreatestCommonDivisor {
         return b;
     }
 
+    public static int gcd(int x, int y) {
+        if (x < y) {
+            int temp = y;
+            y = x;
+            x = temp;
+        }
+        return gcdHelper(x, y);
+    }
+
+    private static int gcdHelper(int x, int y) {
+        return y > 0 ? gcdHelper(y, x % y) : x;
+    }
+
     public static void main(String[] args) {
-        System.out.println(getGcd(27, 9));
+        System.out.println(gcd(27, 9));
     }
 }
