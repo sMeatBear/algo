@@ -4,8 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Test {
+class InnerCall {
+    private int b;
+    int exeTest(InnerCall ic, Test t) {
+        return b + ic.b + t.testInner;
+    }
+}
 
+public class Test {
+    private int testInner;
     /**
      * 
      * Q3
