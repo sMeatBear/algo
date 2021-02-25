@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch GenericsTest",
+            "request": "launch",
+            "mainClass": "app.testcode.generics.GenericsTest",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ReorganizeStrTest",
             "request": "launch",
             "mainClass": "app.greedy.ReorganizeStrTest",
