@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch StaticMethod",
+            "request": "launch",
+            "mainClass": "app.testcode.generics.StaticMethod",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - AnnoTest",
             "request": "launch",
             "mainClass": "app.test.testcode.AnnoTest",
