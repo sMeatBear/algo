@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MyFileReader",
+            "request": "launch",
+            "mainClass": "app.codingtest.MyFileReader",
+            "projectName": "Leetcode2"
+        },
+        {
+            "type": "java",
             "name": "Launch GenericsTest",
             "request": "launch",
             "mainClass": "app.testcode.generics.GenericsTest",
