@@ -10,7 +10,7 @@ public class DataBaseAccessor implements Accessable {
         Class<?> table = domain.getClass();
         // assemble sql statement
         StringBuilder stmt = new StringBuilder();
-        stmt.append("select\s*\sfrom\s");
+        stmt.append("select\\s*\\sfrom\\s");
 
         // 1. get table name
         boolean tableNameExit = table.isAnnotationPresent(TableName.class);
@@ -19,7 +19,7 @@ public class DataBaseAccessor implements Accessable {
         }
         TableName tn = table.getAnnotation(TableName.class);
         String tableName = tn.value();
-        stmt.append(tableName).append("\swhere\s1=1");
+        stmt.append(tableName).append("\\swhere\\s1=1");
 
         // 2. get all the column if it is not null
         for (Field f : table.getDeclaredFields()) {
@@ -43,13 +43,13 @@ public class DataBaseAccessor implements Accessable {
 
             if (colVal == null) {continue;}
 
-            stmt.append("\sand\s").append(colName);
+            stmt.append("\\sand\\s").append(colName);
             if (colVal instanceof Integer) {stmt.append('=').append(colVal);}
             else if (colVal instanceof String) {
                 String colValStr = (String) colVal;
                 if (colValStr.contains(",")) {
                     String[] valOptions = colValStr.split(",");
-                    stmt.append("\sin").append('(');
+                    stmt.append("\\sin").append('(');
                     for (String val : valOptions) {
                         stmt.append('\'').append(val.trim()).append('\'').append(',');
                     }
